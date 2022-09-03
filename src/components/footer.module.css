@@ -1,0 +1,14 @@
+.footerWrapper {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-content: center;
+    place-items: center;
+}
+
+.footerWrapper > .navItem {
+    background-color: transparent;
+    border: 0;
+}

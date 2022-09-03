@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import {Routes, Route, Navigate} from 'react-router-dom';
+import DetailIndex from './pages/datail';
+import HomeIndex from './pages/home';
+import SearchIndex from './pages/Search';
+import MenuIndex from './pages/Menu';
+import MypageIndex from './pages/Mypage';
+import Cal from './pages/Calendar';
 import './App.css';
+import BasicLayout from './layouts/BasicLayout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <DetailIndex />
+    <Routes>
+      <Route path="/" element={<BasicLayout><HomeIndex></HomeIndex></BasicLayout>}/>
+      <Route path="/home" element={<BasicLayout><HomeIndex></HomeIndex></BasicLayout>} />
+      <Route path="/mypage" element={<BasicLayout><MypageIndex/></BasicLayout>} />
+      <Route path="/search" element={<BasicLayout><SearchIndex/></BasicLayout>} />
+      <Route path="/menu" element={<BasicLayout><MenuIndex/></BasicLayout>} />
+      <Route path="/detail" element={<DetailIndex/>} />
+      <Route path="/calendar" element={<BasicLayout><Cal/></BasicLayout>} />
+    </Routes>
   );
 }
 
 export default App;
+
