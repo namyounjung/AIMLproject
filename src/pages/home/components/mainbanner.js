@@ -4,6 +4,8 @@ import HomeCss from '../home.module.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import MainNike from '../../../assets/mainimage/mainnike.png';
+import MainKbp from '../../../assets/mainimage/mainkbp.png';
+import MainMuji from '../../../assets/mainimage/mainmuji.png';
 
 export default function MainBanner(){
     return(
@@ -24,10 +26,10 @@ export default function MainBanner(){
                 <img src={MainNike} alt='' />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={MainNike} alt='' />
+                <img src={MainKbp} alt='' />
             </SwiperSlide>
             <SwiperSlide>
-                <img src={MainNike} alt='' />
+                <img src={MainMuji} alt='' />
             </SwiperSlide>
         </Swiper>
     )

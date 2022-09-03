@@ -6,7 +6,7 @@ export default function Header() {
     let m = now.getMonth();
     const d = now.getDate();
 
-    const week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+    const week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     m = month[m];
     const dayOfWeek = week[now.getDay()];

@@ -4,58 +4,122 @@ export default function BrandList() {
       {
         id: 1,
         brandname: 'muji',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['topten', 'h&m', 'zara', 'spao'],
+        category: 'spa',
+        tag: ['SPA', 'Basic', 'Simple']
       },
       {
         id: 2,
         brandname: 'spao',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['topten', 'zara', 'h&m', 'muji'],
+        category: 'spa',
+        tag: ['SPA', 'Basic', 'Simple']
       },
       {
         id: 3,
         brandname: 'topten',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['h&m', 'zara', 'spao', 'muji'],
+        category: 'spa',
+        tag: ['SPA', 'Basic', 'Simple']
       },
       {
         id: 4,
         brandname: 'adidas',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['nike', 'nb', 'xexymix'],
+        category: 'sports',
+        tag: ['Sports', 'Casual', 'Outdoor']
       },
       {
         id: 5,
         brandname: 'nike',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['adidas', 'nb', 'xexymix'],
+        category: 'sports',
+        tag: ['Sports', 'Casual', 'Outdoor']
       },
       {
         id: 6,
         brandname: 'beanpole',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['polo', 'tomboy'],
+        category: 'basic',
+        tag: ['Normal', 'Classic', 'Modern']
       },
       {
         id: 7,
         brandname: 'polo',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['beanpole', 'tomboy'],
+        category: 'basic',
+        tag: ['Normal', 'Classic', 'Modern']
       },
       {
         id: 8,
         brandname: 'tomboy',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['polo', 'beanpole'],
+        category: 'basic',
+        tag: ['Normal', 'Classic', 'Modern']
       },
       {
         id: 9,
         brandname: 'kbp',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['yankee', 'ikea'],
+        category: 'etc',
+        tag: ['Unique', 'Sensitive', 'Fabric']
       },
       {
         id: 10,
         brandname: 'nb',
-        saleperiod: ''
+        saleperiod: '',
+        relatedBrands: ['adidas', 'nike', 'xexymix'],
+        category: 'sports',
+        tag: ['Sports', 'Casual', 'Outdoor']
       },
       {
         id: 11,
         brandname: 'h&m',
         saleperiod: '',
-        relatedBrands: ['zara', ]
+        relatedBrands: ['topten', 'zara', 'spao', 'muji'],
+        category: 'spa',
+        tag: ['SPA', 'Basic', 'Simple']
+      },      
+      {
+        id: 12,
+        brandname: 'xexymix',
+        saleperiod: '',
+        relatedBrands: ['adidas', 'nb', 'nike'],
+        category: 'sports',
+        tag: ['Sports', 'Casual', 'Outdoor']
+      },
+      {
+        id: 13,
+        brandname: 'yankee',
+        saleperiod: '',
+        relatedBrands: ['yankee', 'kbp'],
+        category: 'etc',
+        tag: ['Unique', 'Sensible ', 'Fragrant']
+      },
+      {
+        id: 14,
+        brandname: 'ikea',
+        saleperiod: '',
+        relatedBrands: ['kbp', 'ikea'],
+        category: 'etc',
+        tag: ['Reasonable', 'Modern', 'Indoor']
+      },
+      {
+        id: 15,
+        brandname: 'zara',
+        saleperiod: '',
+        relatedBrands: ['topten', 'h&m', 'spao', 'muji'],
+        category: 'spa',
+        tag: ['SPA', 'Basic', 'Simple']
       },
     ];
     // return (

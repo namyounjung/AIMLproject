@@ -7,6 +7,7 @@ import MypageIndex from './pages/Mypage';
 import Cal from './pages/Calendar';
 import './App.css';
 import BasicLayout from './layouts/BasicLayout';
+import SignupIndex from './pages/Mypage/Signup';
 
 function App() {
   return (
@@ -19,9 +20,9 @@ function App() {
       <Route path="/menu" element={<BasicLayout><MenuIndex/></BasicLayout>} />
       <Route path="/detail" element={<DetailIndex/>} />
       <Route path="/calendar" element={<BasicLayout><Cal/></BasicLayout>} />
+      <Route path='/signup' element={<BasicLayout><SignupIndex/></BasicLayout>} />
     </Routes>
   );
 }
 
 export default App;
-
