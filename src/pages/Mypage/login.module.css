@@ -1,98 +1,99 @@
 .container {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .container > .logo {
-    width: 100%;
-    padding-top: 160px;
-    padding-bottom: 38px;
-    text-align: center;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 38px;
+  text-align: center;
 }
 
-
 .container .inputWrapper {
-    padding: 0 22px;
-    margin-bottom: 10px;
+  padding: 0 22px;
+  margin-bottom: 10px;
 }
 
 .container .inputWrapper .inputTitle {
-    margin: 0 0 15px 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
+  margin: 0 0 15px 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 19px;
+  color: #898989;
+  font-family: "sinbi";
 }
 
 .container .inputWrapper input {
-    
-    width: 100%;
-    height: 40px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
-input.password {  
-    font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif ;  
-    font-size: 18px;  
+input.password {
+  font-family: "pass", "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 18px;
 }
-
 
 .container .inputWrapper input:focus {
-    border: 2px solid #82AF00;
-    outline: none;
+  border: 1px solid #82af00;
+  outline: none;
 }
 
 .container .inputWrapper .button {
-    width: 339px;
-    height: 40px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    background-color: #dadada;
-    align-items: center;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  align-items: center;
+  outline: 0;
+  border: 0;
+  background-color: #eeeeee;
+  border-radius: 10px;
 
-    
+  margin: 20px 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  color: #000000;
+  text-align: center;
 }
 
 .container .inputWrapper .button:active {
-    background-color: #82AF00;
-
+  background-color: #d8f747;
 }
 
-
 .btext {
-    margin: 0 0 0 0;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 40px;
-    color: #000000;
-    text-align: center;
+  margin: 0 0 0 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 40px;
+  color: #000000;
+  text-align: center;
 }
 
 .container .joinWrapper {
-    padding: 10px 22px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  padding: 10px 22px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .joinWrapper .items {
-    padding: 0 17px;
-    font-size: smaller;
-    color:#727272;
-    
+  padding: 0 17px;
+  font-size: smaller;
+  color: #727272;
 }
 
-
-.items:link{
-    text-decoration: none;
+.items:link {
+  text-decoration: none;
 }
 .joinWrapper .items:active {
-    color:#000000;
-    font-weight:bolder;
-
+  color: #000000;
+  font-weight: bolder;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }

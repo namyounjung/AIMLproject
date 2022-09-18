@@ -13,8 +13,10 @@ export default function HomeIndex(){
     return (
         <div className={HomeCss.homeWrapper}>
             <Header />
-            <MainBanner />
-            <PopularBanner/>
+            <div className={HomeCss.homeContentsWrapper}>
+                <MainBanner />
+                <PopularBanner/>
+            </div>
         </div>
     )
 }

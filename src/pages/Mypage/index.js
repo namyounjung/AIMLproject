@@ -1,63 +1,53 @@
-// import React, { useState } from 'react';
-// import Footer from '../../components/footer';
+import React, { useState } from "react";
+import logo from "../../assets/logo/logo.svg";
+import loginCss from "./login.module.css";
+import { NavLink } from "react-router-dom";
 
-// export default function MypageIndex(){
-//     return (
-//         <div >
-//             마이페이지
-//             {/* <Footer /> */}
-//         </div>
-//     )
-// }
+function Login() {
+  const [isActive, setIsActive] = useState("");
 
-import React, { useState } from 'react';
-import g_long from '../../assets/logo/g_long.png';
-import loginCss from './login.module.css'; 
-import {NavLink} from 'react-router-dom';
+  return (
+    <div className={loginCss.container}>
+      <div className={loginCss.logo}>
+        <img
+          src={logo}
+          name="logo"
+        />
+      </div>
+      <div className={loginCss.inputWrapper}>
+        <p className={loginCss.inputTitle}>ID</p>
+        <input />
+      </div>
+      <div className={loginCss.inputWrapper}>
+        <p className={loginCss.inputTitle}>Password</p>
+        <input type="password" />
+      </div>
 
-function Login(){
-
-    const [isActive, setIsActive] = useState('');
-
-    return (
-        <div className={loginCss.container}>
-            <div className={loginCss.logo}>
-                <img src={g_long} name='logo' />
-            </div>
-            <div className={loginCss.inputWrapper}>
-                <p className={loginCss.inputTitle}>아이디</p>
-                <input/>
-            </div>
-            <div className={loginCss.inputWrapper}>
-                <p className={loginCss.inputTitle}>패스워드</p>
-                <input type='password'/>
-            </div>
-           
-           {/* 로그인 조건문 추가하자 */}
-     
-            <div className={loginCss.inputWrapper}>
-                <div className={loginCss.button}>
-                    <p className={loginCss.btext}>로그인</p>
-                </div>
-            </div>
-
-            <div className={loginCss.joinWrapper}>
-                <NavLink to='/signup'>
-
-                    {
-                        isActive === 'signup'
-                        ? <><a className={loginCss.items}>회원가입</a></>
-                        : <><a className={loginCss.items}>회원가입</a></>
-                    }
-                </NavLink>
-                
-                <a className={loginCss.items}>아이디 찾기</a>
-                <a className={loginCss.items}>비밀번호 찾기</a>
-            </div>
-            
+      {/* 로그인 조건문 추가하자 */}
+      <NavLink to="/home">
+        <div className={loginCss.inputWrapper}>
+          <button className={loginCss.button}>로그인</button>
         </div>
-                  
-    )
+      </NavLink>
+
+      <div className={loginCss.joinWrapper}>
+        <NavLink to="/signup">
+          {isActive === "signup" ? (
+            <>
+              <a className={loginCss.items}>회원가입</a>
+            </>
+          ) : (
+            <>
+              <a className={loginCss.items}>회원가입</a>
+            </>
+          )}
+        </NavLink>
+
+        <a className={loginCss.items}>아이디 찾기</a>
+        <a className={loginCss.items}>비밀번호 찾기</a>
+      </div>
+    </div>
+  );
 }
 
 export default Login;

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "sinbi";
+  src: url("../../assets/font/SSShinb7Regular.ttf");
+}
+
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  color: #000000;
+  padding: 20px;
+  font-family: "sinbi";
+  background: #ffffff;
+  box-shadow: 0 8px 32px 0 rgb(175 175 181 / 37%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.calendarWrapper{
+  margin: 0 12px;
+}

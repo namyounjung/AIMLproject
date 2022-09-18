@@ -1,0 +1,229 @@
+.brandsWrapper {
+}
+
+.header {
+  font-weight: 400;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: -0.408px;
+
+  padding: 20px;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: "AppleSDGothicNeoB00";
+
+  position: fixed;
+  top: 0;
+  z-index: 9;
+
+  display: flex;
+  place-items: center;
+  /* text-align: center; */
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 22px;
+}
+
+.title {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  display: flex;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 400px;
+  object-position: center;
+  object-fit: cover;
+}
+
+.imgTextTop {
+  position: absolute;
+  color: #ffffff;
+  left: 5%;
+  top: 22%;
+  font-family: "AppleSDGothicNeoB00";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 6vw;
+
+  letter-spacing: -0.408px;
+}
+
+.imgTextBottom {
+  position: absolute;
+  color: #ffffff;
+  right: 5%;
+  bottom: 5%;
+  font-family: "AppleSDGothicNeoB00";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.408px;
+  text-align: right;
+}
+
+.imgTextBottom .imgTextBBig {
+  font-size: 7vw;
+}
+
+.imgTextBottom .imgTextBsmall {
+  font-family: "AppleSDGothicNeoM00";
+
+  font-size: 4.5vw;
+}
+
+.tagWrapper {
+  padding: 0 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag {
+  font-family: "AppleSDGothicNeoM00";
+  background-color: #d8f747;
+  padding: 1px 22px;
+  margin: 0px 5px;
+  border-radius: 10px;
+  font-size: 4vw;
+}
+
+.saleWrapper {
+  padding: 0 22px;
+  margin-bottom: 100px;
+}
+
+.saleTitle {
+  font-family: "AppleSDGothicNeoB00";
+  font-size: 6vw;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 10px;
+  background-color: #eeeeee;
+  padding: 8px 0 8px 36px;
+  /* box-shadow: 0 8px 32px 0 rgb(175 175 181 / 37%);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+
+.saleTable {
+  position: relative;
+}
+
+.saleTable img {
+  width: 100%;
+}
+
+.saleMonth {
+  display: flex;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;*/
+  font-size: 100%;
+  /* place-content: center;
+  place-items: center; */
+
+  top: 7%;
+}
+
+.saleMonth1 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  left: 2%;
+  text-align: center;
+}
+
+.saleMonth2 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  left: 19%;
+  text-align: center;
+}
+
+.saleMonth3 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  left: 36%;
+  text-align: center;
+}
+
+.saleMonth4 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  right: 36%;
+  text-align: center;
+}
+
+.saleMonth5 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  right: 19%;
+  text-align: center;
+}
+
+.saleMonth6 {
+  font-size: 4.5vw;
+  justify-content: space-between;
+  width: 12%;
+  font-family: "AppleSDGothicNeoB00";
+  position: absolute;
+  top: 7%;
+  right: 3%;
+  text-align: center;
+}
+
+.weather {
+  position: absolute;
+  top: 150%;
+}
+
+.weather img {
+  width: 100%;
+
+  /* top: 35%;
+  left: 2%; */
+}
+
+.bottomWrapper {
+  margin-top: 20px;
+  font-family: "AppleSDGothicNeoM00";
+  font-size: 3.2vw;
+  text-align: center;
+  /* font-size-adjust: auto; */
+}

@@ -1,0 +1,41 @@
+import brandsCss from "../brands.module.css";
+import back from "../../../assets/icon/back.svg";
+import { NavLink } from "react-router-dom";
+import main from "../../../assets/image/nike2.svg";
+import logoimg from "../../../assets/logo2/nike.svg";
+// import url from 'http://www.mujikorea.net/';
+
+export default function Adidas() {
+  return (
+    <div className={brandsCss.brandsWrapper}>
+      <div className={brandsCss.header}>
+        <NavLink to="/menu">
+          <img
+            src={back}
+            alt=" "
+          />
+        </NavLink>
+        <div className={brandsCss.logo}>
+          <img src={logoimg} />
+        </div>
+      </div>
+
+      <div className={brandsCss.imageWrapper}>
+        <img
+          src={main}
+          alt=" "
+        />
+        <div className={brandsCss.imgTextTop}>
+          나이키 브랜드 페이지 <br />
+          Just Do it!
+        </div>
+        <div className={brandsCss.imgTextBottom}>
+          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBsmall}>
+            10/30(금)-11/10(화) <br /> 나이키 멤버십 한정
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

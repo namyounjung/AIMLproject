@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "sinbi";
+  src: url("../../assets/font/SSShinb7Regular.ttf");
+}
+
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  color: #000000;
+  padding: 20px;
+  font-family: "sinbi";
+  background: #ffffff;
+  /* box-shadow: 0 8px 32px 0 rgb(175 175 181 / 37%);
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+
+.input {
+  margin: 0 20px 10px;
+}
+.rankwrap {
+  width: 100%;
+  margin: 10px;
+  position: relative;
+}
+
+.rankimg {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.ranktext {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
