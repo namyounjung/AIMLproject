@@ -45,6 +45,7 @@
   position: relative;
   width: 100%;
   margin-bottom: 15px;
+  margin-top: 60px;
 }
 
 .imageWrapper img {
@@ -58,19 +59,21 @@
   position: absolute;
   color: #ffffff;
   left: 5%;
-  top: 22%;
+  top: 5%;
   font-family: "AppleSDGothicNeoB00";
   font-style: normal;
   font-weight: 400;
   font-size: 6vw;
-
+  /* text-shadow: -1px 0 #000000, 1px 0 #000000, 1px 0 #000000, -1px 0 #000000; */
   letter-spacing: -0.408px;
 }
 
 .imgTextBottom {
   position: absolute;
   color: #ffffff;
-  right: 5%;
+  /* text-shadow: -0.5px 0 #000000, 0.5px 0 #000000, 0.5px 0 #000000, */
+  /* -0.5px 0 #000000; */
+  right: 3%;
   bottom: 5%;
   font-family: "AppleSDGothicNeoB00";
   font-style: normal;

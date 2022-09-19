@@ -3,14 +3,14 @@ import back from "../../../assets/icon/back.svg";
 import { NavLink } from "react-router-dom";
 import main from "../../../assets/image/uniqlo.svg";
 import logoimg from "../../../assets/logo2/uniqlo.svg";
-
+import brandList from "../../detail/object.js";
 // import url from 'http://www.mujikorea.net/';
 
 export default function Uniqlo() {
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
-        <NavLink to="/menu">
+        <NavLink to={-1}>
           <img
             src={back}
             alt=" "
@@ -36,6 +36,11 @@ export default function Uniqlo() {
             10/30(금)-11/10(화) <br /> 유니클로 앱 회원 한정
           </div>
         </div>
+      </div>
+      <div className={brandsCss.tagWrapper}>
+        {brandList[17].tag.map((tag, i) => {
+          return <b className={brandsCss.tag}>#{tag}</b>;
+        })}
       </div>
     </div>
   );

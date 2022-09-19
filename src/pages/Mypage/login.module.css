@@ -37,7 +37,7 @@ input.password {
 }
 
 .container .inputWrapper input:focus {
-  border: 1px solid #82af00;
+  border: 1px solid #d8f747;
   outline: none;
 }
 

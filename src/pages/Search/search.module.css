@@ -27,19 +27,48 @@
   position: relative;
 }
 
-.rankimg {
+.rankimgWrapper {
   width: 100%;
   vertical-align: middle;
+  font-size: 0;
+  position: relative;
+}
+
+.rankimg {
+  width: 100%;
 }
 
 .ranktext {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 100%;
-  transform: translate(-50%, -50%);
   font-size: 20px;
-  text-align: center;
   font-weight: 700;
   color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+}
+
+.searchInputWrapper {
+  width: 100%;
+  padding: 16px 20px;
+  position: relative;
+}
+
+.searchInputWrapper > input {
+  width: 100%;
+  background-color: rgba(196, 196, 196, 0.5);
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+.searchInputIcon {
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.margin {
+  margin-bottom: 70px;
 }

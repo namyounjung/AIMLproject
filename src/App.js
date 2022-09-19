@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import DetailIndex from "./pages/datail";
+import DetailIndex from "./pages/detail";
 import HomeIndex from "./pages/home";
 import SearchIndex from "./pages/Search";
 import MenuIndex from "./pages/Menu";

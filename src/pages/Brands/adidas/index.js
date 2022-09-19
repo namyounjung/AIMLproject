@@ -3,13 +3,14 @@ import back from "../../../assets/icon/back.svg";
 import { NavLink } from "react-router-dom";
 import main from "../../../assets/image/adidas.svg";
 import logoimg from "../../../assets/logo2/adidas.svg";
-// import url from 'http://www.mujikorea.net/';
+// import url from '';
+import brandList from "../../detail/object.js";
 
 export default function Adidas() {
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
-        <NavLink to="/menu">
+        <NavLink to={-1}>
           <img
             src={back}
             alt=" "
@@ -35,6 +36,11 @@ export default function Adidas() {
             10/30(금)-11/10(화) <br /> MUJI passport 회원 한정
           </div>
         </div>
+      </div>
+      <div className={brandsCss.tagWrapper}>
+        {brandList[3].tag.map((tag, i) => {
+          return <b className={brandsCss.tag}>#{tag}</b>;
+        })}
       </div>
     </div>
   );
