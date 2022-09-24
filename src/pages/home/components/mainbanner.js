@@ -20,8 +20,11 @@ export default function MainBanner() {
       }}
       pagination={{
         type: "fraction",
+        renderBullet: (index, className) => {
+          return <a>ddddd</a>;
+        },
       }}
-      module={[Autoplay, Pagination]}
+      modules={[Autoplay, Pagination]}
     >
       <SwiperSlide className={HomeCss.swiperSlide}>
         <NavLink to="/Brands/nike">

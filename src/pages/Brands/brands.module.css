@@ -111,9 +111,53 @@
 }
 
 .saleWrapper {
-  padding: 0 22px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  border: 1px solid black;
+  border-radius: 15px;
+  width: calc(100% - 42px);
+  margin: 0 auto 100px;
+  display: flex;
+  justify-content: space-between;
 }
+
+dl + dl {
+  border-left: 1px solid black;
+}
+
+dl {
+  flex: 1;
+}
+
+dt {
+  border-bottom: 1px solid black;
+  line-height: 25px;
+  text-align: center;
+  font-size: 15px;
+}
+
+dd img {
+  height: 40px;
+  width: 40px;
+  /* margin-top: 6px; */
+  margin-bottom: 10px;
+}
+
+dd {
+  font-size: 15px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  /* margin-bottom: 6px; */
+}
+/* dl { */
+/* border-right: 1px solid black; */
+/* } */
+/* dl:last-child { */
+/* border-right: 0; */
+/* } */
 
 .saleTitle {
   font-family: "AppleSDGothicNeoB00";
