@@ -24,7 +24,7 @@ function Login() {
       </div>
 
       {/* 로그인 조건문 추가하자 */}
-      <NavLink to="/home">
+      <NavLink to="/login">
         <div className={loginCss.inputWrapper}>
           <button className={loginCss.button}>로그인</button>
         </div>

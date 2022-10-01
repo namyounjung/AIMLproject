@@ -1,0 +1,39 @@
+.main {
+  display: grid;
+  position: fixed;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: 80%;
+  z-index: 99;
+  transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+  background: rgba(255, 255, 255, 0.27);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.text {
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  padding: 20px;
+}
+
+.btn {
+  width: 100%;
+  background: linear-gradient(to right, rgb(220, 227, 91), rgb(69, 182, 73));
+  padding: 10px 25px;
+  display: inline-block;
+  border-radius: 25px;
+  color: #fff;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+}
+.footer {
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  place-self: end;
+}

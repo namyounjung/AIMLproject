@@ -5,6 +5,9 @@ import main from "../../../assets/image/beanpole.svg";
 import logoimg from "../../../assets/logo2/beanpole.svg";
 // import url from 'http://www.mujikorea.net/';
 import brandList from "../../detail/object.js";
+import sun from "../../../assets/weather/sun.svg";
+import rain from "../../../assets/weather/rain.svg";
+import cloud from "../../../assets/weather/cloud.svg";
 
 export default function BeanPole() {
   return (
@@ -22,10 +25,15 @@ export default function BeanPole() {
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <img
-          src={main}
-          alt=" "
-        />
+        <a
+          href="https://www.ssfshop.com/Beanpole"
+          target="_blank"
+        >
+          <img
+            src={main}
+            alt=" "
+          />
+        </a>
         <div className={brandsCss.imgTextTop}>
           빈폴페이지 <br />
           「기분 좋은 생활」의 실현
@@ -41,6 +49,44 @@ export default function BeanPole() {
         {brandList[5].tag.map((tag, i) => {
           return <b className={brandsCss.tag}>#{tag}</b>;
         })}
+      </div>
+      <div className={brandsCss.saleTitle}>브랜드 세일 예보</div>
+      <div className={brandsCss.saleWrapper}>
+        <dl>
+          <dt>9월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>10월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>11월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>12월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>1월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
       </div>
     </div>
   );

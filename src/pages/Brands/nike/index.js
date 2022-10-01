@@ -5,6 +5,9 @@ import main from "../../../assets/image/nike2.svg";
 import logoimg from "../../../assets/logo2/nike.svg";
 // import url from 'http://www.mujikorea.net/';
 import brandList from "../../detail/object.js";
+import sun from "../../../assets/weather/sun.svg";
+import rain from "../../../assets/weather/rain.svg";
+import cloud from "../../../assets/weather/cloud.svg";
 
 export default function Adidas() {
   return (
@@ -22,10 +25,15 @@ export default function Adidas() {
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <img
-          src={main}
-          alt=" "
-        />
+        <a
+          href="www.adidas.co.kr"
+          target="_blank"
+        >
+          <img
+            src={main}
+            alt=" "
+          />
+        </a>
         <div className={brandsCss.imgTextTop}>
           나이키 브랜드 페이지 <br />
           Just Do it!
@@ -41,6 +49,44 @@ export default function Adidas() {
         {brandList[4].tag.map((tag, i) => {
           return <b className={brandsCss.tag}>#{tag}</b>;
         })}
+      </div>
+      <div className={brandsCss.saleTitle}>브랜드 세일 예보</div>
+      <div className={brandsCss.saleWrapper}>
+        <dl>
+          <dt>9월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>10월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>11월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>12월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
+        <dl>
+          <dt>1월</dt>
+          <dd>
+            <img src={sun} />
+            50%
+          </dd>
+        </dl>
       </div>
     </div>
   );

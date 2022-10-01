@@ -9,6 +9,9 @@
   padding-bottom: 38px;
   text-align: center;
 }
+.container > .logo > img {
+  width: 100%;
+}
 
 .container .inputWrapper {
   padding: 0 22px;

@@ -93,67 +93,6 @@ function Muji() {
           </dd>
         </dl>
       </div>
-      {/* <div className={brandsCss.saleWrapper}>
-      <div className={brandsCss.saleTable}>
-        <img
-          src={table}
-          alt=""
-        />
-        <div className={brandsCss.saleMonth}>
-          <div className={brandsCss.saleMonth1}>
-            9월
-            <div className={brandsCss.weather}>
-              <img src={sun} />
-              50%
-            </div>
-          </div>
-
-          <div className={brandsCss.saleMonth2}>
-            10월
-            <div className={brandsCss.weather}>
-              <img src={rain} />
-              5%
-            </div>
-          </div>
-
-          <div className={brandsCss.saleMonth3}>
-            11월
-            <div className={brandsCss.weather}>
-              <img src={cloud} />
-              25%
-            </div>
-          </div>
-
-          <div className={brandsCss.saleMonth4}>
-            12월
-            <div className={brandsCss.weather}>
-              <img src={rain} />
-              25%
-            </div>
-          </div>
-
-          <div className={brandsCss.saleMonth5}>
-            1월
-            <div className={brandsCss.weather}>
-              <img src={rain} />
-              5%
-            </div>
-          </div>
-
-          <div className={brandsCss.saleMonth6}>
-            2월
-            <div className={brandsCss.weather}>
-              <img src={sun} />
-              60%
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={brandsCss.bottomWrapper}>
-        해당 브랜드의 지난 할인 데이터를 분석하면 9월 할인율이 가장 높아요
-      </div>
-      </div> */}
     </div>
   );
 }
