@@ -46,6 +46,10 @@ function App() {
     }, 1000);
   }, []);
 
+  function setProfile() {
+    setIsShowProfile(false);
+    document.body.style.overflow = "auto";
+  }
   return (
     // <DetailIndex />
     <>
@@ -271,7 +275,10 @@ function App() {
           }
         />
       </Routes>
-      <Start isShowProfile={isShowProfile} />
+      <Start
+        isShowProfile={isShowProfile}
+        setProfile={setProfile}
+      />
     </>
   );
 }
