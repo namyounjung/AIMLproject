@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
+import moment from "moment";
 import "react-calendar/dist/Calendar.css";
 import Footer from "../../components/footer";
 import calendarCss from "./calendar.module.css";
 import d1 from "../../assets/calendar/1.png";
 import d2 from "../../assets/calendar/2.png";
 import d3 from "../../assets/calendar/3.png";
+import brandList from "../detail/object.js";
 
 function Cal() {
   const [value, onChange] = useState(new Date());
@@ -13,7 +15,7 @@ function Cal() {
   const [saleList, setSaleList] = useState([]);
 
   useEffect(() => {
-    setSaleList([20, 21, 22]);
+    setSaleList([10, 11, 12]);
   }, []);
 
   return (
@@ -22,7 +24,10 @@ function Cal() {
       <div className={calendarCss.calendarWrapper}>
         <Calendar
           onChange={onChange}
+          formatDay={(locale, date) => moment(date).format("DD")}
           value={value}
+          navigationLabel={null}
+          showNeighboringMonth={false}
           tileContent={({ activeStartDate, date, view }) => {
             if (saleList.find((x) => x === date.getDate())) {
               return (

@@ -2,6 +2,14 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import startCss from "./start.module.css";
 import styled from "styled-components";
+import m_muji from "../../../assets/menuimage/mono/muji.png";
+import m_uniqlo from "../../../assets/menuimage/mono/uniqlo.png";
+import m_beanpole from "../../../assets/menuimage/mono/beanpole.png";
+import m_yankee from "../../../assets/menuimage/mono/yankee.png";
+import beanpole from "../../../assets/menuimage/beanpole.png";
+import yankee from "../../../assets/menuimage/yankee.png";
+import muji from "../../../assets/menuimage/muji.png";
+import uniqlo from "../../../assets/menuimage/uniqlo.png";
 
 const OPTIONS_M = [
   { value: "01", name: "1월" },
@@ -80,24 +88,28 @@ export default function Start({ isShowProfile, setProfile }) {
   const [step, setStep] = useState(1);
   const [keyword, setKeyword] = useState([
     {
-      id: "1",
+      id: "무인양품",
       isActive: false,
+      m_image: m_muji,
+      image: muji,
     },
     {
-      id: "2",
+      id: "유니클로",
       isActive: false,
+      m_image: m_uniqlo,
+      image: uniqlo,
     },
     {
-      id: "3",
+      id: "빈폴",
       isActive: false,
+      m_image: m_beanpole,
+      image: beanpole,
     },
     {
-      id: "4",
+      id: "양키캔들",
       isActive: false,
-    },
-    {
-      id: "5",
-      isActive: false,
+      m_image: m_yankee,
+      image: yankee,
     },
   ]);
 
@@ -153,25 +165,46 @@ export default function Start({ isShowProfile, setProfile }) {
 
         <div className={startCss.secondStep}>
           <p className={startCss.text}>
-            좋아하는 키워드를
+            좋아하는 브랜드를
             <br />
-            <strong>3개</strong> 골라주세요!
+            <strong>3개 이상</strong> 골라주세요!
           </p>
           <div className={startCss.container}>
             <div className={startCss.keywordSelectedWrapper}>
               {keyword.map((item, i) => {
-                return (
-                  <div
-                    key={i}
-                    style={{
-                      background: item.isActive === true ? "red" : "white",
-                    }}
-                    className={startCss.keywordSelected}
-                    onClick={() => onKeywordClick(i)}
-                  >
-                    {item.id}
-                  </div>
-                );
+                if (item.isActive === true) {
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        fontWeight: "500",
+                        textAlign: "center",
+                        gridTemplatesColumn: "auto auto",
+                      }}
+                      className={startCss.keywordSelected}
+                      onClick={() => onKeywordClick(i)}
+                    >
+                      <img src={item.image} />
+                      <p>{item.id}</p>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        color: "#dddddd",
+                        textAlign: "center",
+                        gridTemplatesColumn: "auto auto",
+                      }}
+                      className={startCss.keywordSelected}
+                      onClick={() => onKeywordClick(i)}
+                    >
+                      <img src={item.m_image} />
+                      <p>{item.id}</p>
+                    </div>
+                  );
+                }
               })}
             </div>
           </div>
