@@ -40,10 +40,12 @@ function App() {
   }, [pathname]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsShowProfile(true);
-      document.body.style.overflow = "hidden";
-    }, 1000);
+    console.log(localStorage.getItem("user"));
+    if (localStorage.getItem("user") === null)
+      setTimeout(() => {
+        setIsShowProfile(true);
+        document.body.style.overflow = "hidden";
+      }, 1000);
   }, []);
 
   function setProfile() {

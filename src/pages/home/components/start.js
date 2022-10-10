@@ -96,7 +96,6 @@ const OPTIONS_D = [
 const SelectBox = (props) => {
   const handleChange = (e) => {
     // event handler
-    console.log(e.target.value);
     props.onChange(e.target.value);
   };
 
@@ -289,16 +288,28 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
   const [user, setUser] = useImmer({
     name: "",
     birthYear: "",
-    birthMonth: "",
-    birthDay: "",
+    birthMonth: "01",
+    birthDay: "01",
     favoriteBrandList: [],
   });
 
   function onSubmitClick() {
-    localStorage.setItem("user", JSON.stringify(user));
-    setIsShowProfile();
+    if (user.favoriteBrandList.length >= 3) {
+      localStorage.setItem("user", JSON.stringify(user));
+      setIsShowProfile();
+    }
   }
 
+  function onNextClick() {
+    if (
+      user.name !== "" &&
+      user.birthDay !== "" &&
+      user.birthMonth !== "" &&
+      user.birthYear !== ""
+    ) {
+      setStep(2);
+    }
+  }
   useEffect(() => {
     setUser((draft) => {
       draft.favoriteBrandList = keyword
@@ -372,9 +383,7 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
           <footer className={startCss.footer}>
             <button
               className={startCss.btn}
-              onClick={() => {
-                setStep(2);
-              }}
+              onClick={onNextClick}
             >
               다음으로
             </button>
