@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../../assets/logo/g_long.png";
 import setting from "../../../assets/icon/setting.svg";
 import loginCss from "./login.module.css";
@@ -6,18 +6,74 @@ import { NavLink } from "react-router-dom";
 import userimg from "../../../assets/icon/user_image.png";
 import brandList from "../../detail/object.js";
 import tomboy from "../../../assets/rec_logo/tomboy.png";
-import kbp from "../../../assets/rec_logo/kitty.png";
+import kbp from "../../../assets/rec_logo/kbp.png";
 import uniqlo from "../../../assets/rec_logo/uniqlo.png";
 import eightsec from "../../../assets/rec_logo/8sec.png";
 import zara from "../../../assets/rec_logo/zara.png";
 import spao from "../../../assets/rec_logo/spao.png";
+import adidas from "../../../assets/rec_logo/adidas.png";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+import BrandList from "../../detail/object.js";
+import { useImmer } from "use-immer";
 
 export default function LoginIndex() {
   const [isActive, setIsActive] = useState("");
+  const [profile, setProfile] = useImmer({
+    tag: [],
+    favorite: [],
+    recommend: [],
+  });
+
+  const user = localStorage.getItem("user");
+  const parsedUser = JSON.parse(user);
+
+  function getTopThreeTag(tagList) {
+    // get count
+    const result = tagList.reduce((accu, curr) => {
+      accu[curr] = (accu[curr] || 0) + 1;
+      return accu;
+    }, {});
+    // 내림차순 정렬
+    let sorted = Object.entries(result).sort((a, b) => b[1] - a[1]);
+    let topthree = [];
+    for (let element of sorted) {
+      topthree.push(element[0]);
+    }
+
+    return [topthree[0], topthree[1], topthree[2]];
+  }
+
+  useEffect(() => {
+    let favoriteList = [];
+    let tagList = [];
+    let recommnedList = [];
+    parsedUser.favoriteBrandList.forEach((item) => {
+      for (const obj of BrandList) {
+        if (item === obj.brandname) {
+          // favoriteList
+          favoriteList.push(obj.brandname);
+
+          // tagList
+          tagList = tagList.concat(obj.tag);
+
+          // recommnedList
+          const mergedRecommnedList = recommnedList.concat(obj.relatedBrands);
+          recommnedList = mergedRecommnedList.filter(
+            (item, pos) => mergedRecommnedList.indexOf(item) === pos
+          );
+        }
+      }
+    });
+    setProfile((draft) => {
+      draft.favorite = favoriteList;
+      draft.tag = getTopThreeTag(tagList);
+      draft.recommend = recommnedList;
+    });
+  }, []);
 
   return (
     <div className={loginCss.loginWrapper}>
@@ -27,11 +83,18 @@ export default function LoginIndex() {
       <div className={loginCss.container}>
         <div className={loginCss.profile}>
           <img src={userimg} />
-          <p className={loginCss.user}>새얀</p>
+          <p className={loginCss.user}>{parsedUser.name}</p>
         </div>
         <div className={loginCss.tagWrapper}>
-          {brandList[0].tag.map((tag, i) => {
-            return <b className={loginCss.tag}>#{tag}</b>;
+          {profile.tag.map((tag, i) => {
+            return (
+              <b
+                key={i}
+                className={loginCss.tag}
+              >
+                #{tag}
+              </b>
+            );
           })}
         </div>
       </div>
@@ -42,37 +105,25 @@ export default function LoginIndex() {
         </div>
         <Swiper
           className={`${loginCss.swiper2} mySwiper`}
-          modules={[Autoplay, Pagination]}
           spaceBetween={8}
           slidesPerView={3.4}
         >
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={tomboy}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>스튜디오 톰보이</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={kbp}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>키티버니포니</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={uniqlo}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>유니클로</p>
-            </div>
-          </SwiperSlide>
+          {profile.favorite.map((item, i) => {
+            return (
+              <SwiperSlide
+                key={i}
+                className={loginCss.swiperSlide}
+              >
+                <img
+                  src={require(`../../../assets/rec_logo/${item}.png`)}
+                  alt=""
+                />
+                <div className={loginCss.swiperTextWrapper}>
+                  <p className={loginCss.swiperTextTitle}>{item}</p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
       <div className={loginCss.calendar}>
@@ -86,45 +137,25 @@ export default function LoginIndex() {
         <p className={loginCss.title}>맞춤 브랜드 추천</p>
         <Swiper
           className={`${loginCss.swiper2} mySwiper`}
-          loop={true}
-          centeredSlides={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            type: "fraction",
-          }}
-          spaceBetween={5}
-          slidesPerView={3}
+          spaceBetween={8}
+          slidesPerView={3.4}
         >
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={eightsec}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>에잇세컨즈</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={zara}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>ZARA</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={loginCss.swiperSlide}>
-            <img
-              src={spao}
-              alt=""
-            />
-            <div className={loginCss.swiperTextWrapper}>
-              <p className={loginCss.swiperTextTitle}>스파오</p>
-            </div>
-          </SwiperSlide>
+          {profile.recommend.map((item, i) => {
+            return (
+              <SwiperSlide
+                key={i}
+                className={loginCss.swiperSlide}
+              >
+                <img
+                  src={require(`../../../assets/rec_logo/${item}.png`)}
+                  alt=""
+                />
+                <div className={loginCss.swiperTextWrapper}>
+                  <p className={loginCss.swiperTextTitle}>{item}</p>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </div>

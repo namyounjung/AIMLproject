@@ -277,7 +277,7 @@ function App() {
       </Routes>
       <Start
         isShowProfile={isShowProfile}
-        setProfile={setProfile}
+        setIsShowProfile={setProfile}
       />
     </>
   );

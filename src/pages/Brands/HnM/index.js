@@ -1,8 +1,8 @@
 import brandsCss from "../brands.module.css";
 import back from "../../../assets/icon/back.svg";
 import { NavLink } from "react-router-dom";
-import main from "../../../assets/image/h&m.svg";
-import logoimg from "../../../assets/logo2/h&m.svg";
+import main from "../../../assets/image/hnm.svg";
+import logoimg from "../../../assets/logo2/hnm.svg";
 // import url from 'http://www.mujikorea.net/';
 import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
@@ -35,7 +35,7 @@ export default function HnM() {
           alt=" "
         />
         <div className={brandsCss.imgTextTop}>
-          H&M페이지입니다. <br />
+          hnm페이지입니다. <br />
           안녕하세요
         </div>
         <div className={brandsCss.imgTextBottom}>

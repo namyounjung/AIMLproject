@@ -18,7 +18,7 @@ import filaimg from "../../../src/assets/rank/fila.png";
 import nikeimg from "../../../src/assets/rank/nike.png";
 import ykimg from "../../../src/assets/rank/yankee.png";
 import ikeaimg from "../../../src/assets/rank/ikea.png";
-import hmimg from "../../../src/assets/rank/h&m.png";
+import hmimg from "../../../src/assets/rank/hnm.png";
 import magnify from "../../../src/assets/icon/magnify.png";
 import { NavLink, useLocation } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export default function SearchIndex() {
     },
     {
       id: "HnM",
-      searchWord: ["h&m", "hnm", "hm"],
+      searchWord: ["hnm", "hnm", "hm"],
       imgName: hmimg,
     },
     {

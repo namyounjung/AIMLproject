@@ -47,8 +47,8 @@
   font-weight: 400;
 }
 .react-calendar {
-  width: 400px;
-  max-width: 100%;
+  /* width: 400px; */
+  width: 100%;
   background-color: #fff;
   color: #222;
   border-radius: 8px;
@@ -73,6 +73,10 @@
 }
 abbr[title] {
   text-decoration: none;
+}
+
+.react-calendar__tile {
+  height: calc((100vw - 24px) / 7);
 }
 
 .react-calendar__tile:enabled:hover,

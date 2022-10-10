@@ -8,6 +8,17 @@ import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
+import File from "../../../assets/csvfile/adidas_weekly.xlsx";
+
+import readXlsxFile from "read-excel-file";
+
+const map = {
+  Num: "Num",
+  Date: "Date",
+  Probability: "Probability",
+  Month: "Month1",
+  Day: "Day1",
+};
 
 export default function Adidas() {
   return (
@@ -50,6 +61,18 @@ export default function Adidas() {
           return <b className={brandsCss.tag}>#{tag}</b>;
         })}
       </div>
+
+      <input
+        type="file"
+        onChange={(e) => {
+          console.log(e);
+          readXlsxFile(e.target.files[0]).then((rows) => {
+            // `rows` is an array of rows
+            // each row being an array of cells.
+            console.log(rows);
+          });
+        }}
+      />
 
       <div className={brandsCss.saleTitle}>브랜드 세일 예보</div>
       <div className={brandsCss.saleWrapper}>

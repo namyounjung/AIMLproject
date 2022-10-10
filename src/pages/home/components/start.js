@@ -6,10 +6,40 @@ import m_muji from "../../../assets/menuimage/mono/muji.png";
 import m_uniqlo from "../../../assets/menuimage/mono/uniqlo.png";
 import m_beanpole from "../../../assets/menuimage/mono/beanpole.png";
 import m_yankee from "../../../assets/menuimage/mono/yankee.png";
+import m_adidas from "../../../assets/menuimage/mono/adidas.png";
+import m_eight from "../../../assets/menuimage/mono/eight.png";
+import m_fila from "../../../assets/menuimage/mono/fila.png";
+import m_ikea from "../../../assets/menuimage/mono/ikea.png";
+import m_kbp from "../../../assets/menuimage/mono/kbp.png";
+import m_newbalance from "../../../assets/menuimage/mono/newbalance.png";
+import m_nike from "../../../assets/menuimage/mono/nike.png";
+import m_north from "../../../assets/menuimage/mono/north.png";
+import m_polo from "../../../assets/menuimage/mono/polo.png";
+import m_spao from "../../../assets/menuimage/mono/spao.png";
+import m_tomboy from "../../../assets/menuimage/mono/tomboy.png";
+import m_topten from "../../../assets/menuimage/mono/topten.png";
+import m_xexymix from "../../../assets/menuimage/mono/xexymix.png";
+import m_zara from "../../../assets/menuimage/mono/zara.png";
+import adidas from "../../../assets/menuimage/adidas.png";
+import eight from "../../../assets/menuimage/eight.png";
+import fila from "../../../assets/menuimage/fila.png";
+import ikea from "../../../assets/menuimage/ikea.png";
+import kbp from "../../../assets/menuimage/kbp.png";
+import newbalance from "../../../assets/menuimage/newbalance.png";
+import nike from "../../../assets/menuimage/nike.png";
+import north from "../../../assets/menuimage/north.png";
+import polo from "../../../assets/menuimage/polo.png";
+import spao from "../../../assets/menuimage/spao.png";
+import tomboy from "../../../assets/menuimage/tomboy.png";
+import topten from "../../../assets/menuimage/topten.png";
+import xexymix from "../../../assets/menuimage/xexymix.png";
+import zara from "../../../assets/menuimage/zara.png";
 import beanpole from "../../../assets/menuimage/beanpole.png";
 import yankee from "../../../assets/menuimage/yankee.png";
 import muji from "../../../assets/menuimage/muji.png";
 import uniqlo from "../../../assets/menuimage/uniqlo.png";
+import { useImmer } from "use-immer";
+import { immerable } from "immer";
 
 const OPTIONS_M = [
   { value: "01", name: "1월" },
@@ -67,6 +97,7 @@ const SelectBox = (props) => {
   const handleChange = (e) => {
     // event handler
     console.log(e.target.value);
+    props.onChange(e.target.value);
   };
 
   return (
@@ -84,32 +115,168 @@ const SelectBox = (props) => {
   );
 };
 
-export default function Start({ isShowProfile, setProfile }) {
+export default function Start({ isShowProfile, setIsShowProfile }) {
   const [step, setStep] = useState(1);
   const [keyword, setKeyword] = useState([
     {
-      id: "무인양품",
+      id: "muji",
+      name: "무인양품",
       isActive: false,
       m_image: m_muji,
       image: muji,
+      relatedBrands: ["topten", "hnm", "spao", "eight", "uniqlo", "zara"],
+      category: "spa",
+      tag: ["SPA", "Basic", "Simple"],
     },
     {
-      id: "유니클로",
+      id: "uniqlo",
+      name: "유니클로",
       isActive: false,
       m_image: m_uniqlo,
       image: uniqlo,
+      relatedBrands: ["topten", "hnm", "spao", "muji", "eight", "zara"],
+      category: "spa",
+      tag: ["SPA", "Basic", "Simple"],
     },
     {
-      id: "빈폴",
+      id: "spao",
+      name: "스파오",
+      isActive: false,
+      m_image: m_spao,
+      image: spao,
+      relatedBrands: ["topten", "hnm", "muji", "eight", "uniqlo", "zara"],
+      category: "spa",
+      tag: ["SPA", "Basic", "Simple"],
+    },
+    {
+      id: "topten",
+      name: "탑텐",
+      isActive: false,
+      m_image: m_topten,
+      image: topten,
+      relatedBrands: ["hnm", "spao", "muji", "eight", "uniqlo", "zara"],
+      category: "spa",
+      tag: ["SPA", "Basic", "Simple"],
+    },
+    {
+      id: "beanpole",
+      name: "빈폴",
       isActive: false,
       m_image: m_beanpole,
       image: beanpole,
+      relatedBrands: ["polo", "tomboy"],
+      category: "basic",
+      tag: ["Normal", "Classic", "Modern"],
     },
     {
-      id: "양키캔들",
+      id: "polo",
+      name: "폴로",
+      isActive: false,
+      m_image: m_polo,
+      image: polo,
+      relatedBrands: ["beanpole", "tomboy"],
+      category: "basic",
+      tag: ["Normal", "Classic", "Modern"],
+    },
+    {
+      id: "tomboy",
+      name: "톰보이",
+      isActive: false,
+      m_image: m_tomboy,
+      image: tomboy,
+      relatedBrands: ["polo", "beanpole"],
+      category: "basic",
+      tag: ["Normal", "Classic", "Modern"],
+    },
+    {
+      id: "yankee",
+      name: "양키캔들",
       isActive: false,
       m_image: m_yankee,
       image: yankee,
+      relatedBrands: ["yankee", "kbp"],
+      category: "etc",
+      tag: ["Unique", "Sensible ", "Fragrant"],
+    },
+    {
+      id: "adidas",
+      name: "아디다스",
+      isActive: false,
+      m_image: m_adidas,
+      image: adidas,
+      relatedBrands: ["nike", "xexymix", "nb", "fila", "north"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "nike",
+      name: "나이키",
+      isActive: false,
+      m_image: m_nike,
+      image: nike,
+      relatedBrands: ["adidas", "xexymix", "nb", "fila", "north"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "nb",
+      name: "뉴발란스",
+      isActive: false,
+      m_image: m_newbalance,
+      image: newbalance,
+      relatedBrands: ["adidas", "nike", "xexymix", "fila", "north"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "north",
+      name: "노스페이스",
+      isActive: false,
+      m_image: m_north,
+      image: north,
+      relatedBrands: ["adidas", "nike", "xexymix", "nb", "fila"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "fila",
+      name: "휠라",
+      isActive: false,
+      m_image: m_fila,
+      image: fila,
+      relatedBrands: ["adidas", "nike", "xexymix", "nb", "north"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "xexymix",
+      name: "젝시믹스",
+      isActive: false,
+      m_image: m_xexymix,
+      image: xexymix,
+      relatedBrands: ["adidas", "nike", "nb", "fila", "north"],
+      category: "sports",
+      tag: ["Sports", "Casual", "Outdoor"],
+    },
+    {
+      id: "ikea",
+      name: "이케아",
+      isActive: false,
+      m_image: m_ikea,
+      image: ikea,
+      relatedBrands: ["kbp", "ikea"],
+      category: "etc",
+      tag: ["Reasonable", "Modern", "Indoor"],
+    },
+    {
+      id: "kbp",
+      name: "키티버니포니",
+      isActive: false,
+      m_image: m_kbp,
+      image: kbp,
+      relatedBrands: ["yankee", "ikea"],
+      category: "etc",
+      tag: ["Unique", "Sensitive", "Fabric"],
     },
   ]);
 
@@ -118,6 +285,27 @@ export default function Start({ isShowProfile, setProfile }) {
     newList[index].isActive = !newList[index].isActive;
     setKeyword(newList);
   }
+
+  const [user, setUser] = useImmer({
+    name: "",
+    birthYear: "",
+    birthMonth: "",
+    birthDay: "",
+    favoriteBrandList: [],
+  });
+
+  function onSubmitClick() {
+    localStorage.setItem("user", JSON.stringify(user));
+    setIsShowProfile();
+  }
+
+  useEffect(() => {
+    setUser((draft) => {
+      draft.favoriteBrandList = keyword
+        .filter((item) => item.isActive === true)
+        .map((item) => item.id);
+    });
+  }, [keyword]);
 
   return (
     <div
@@ -137,15 +325,45 @@ export default function Start({ isShowProfile, setProfile }) {
           <div className={startCss.container}>
             <div className={startCss.inputWrapper}>
               <p className={startCss.inputTitle}>이름</p>
-              <input />
+              <input
+                onChange={(e) => {
+                  setUser((draft) => {
+                    draft.name = e.target.value;
+                  });
+                }}
+              />
             </div>
 
             <div className={startCss.birthWrapper}>
               <p className={startCss.inputTitle}>생년월일</p>
               <div className={startCss.birth}>
-                <input />
-                <SelectBox options={OPTIONS_M}></SelectBox>
-                <SelectBox options={OPTIONS_D}></SelectBox>
+                <input
+                  type="text"
+                  value={user.birthYear}
+                  onChange={(e) => {
+                    setUser((draft) => {
+                      draft.birthYear = e.target.value
+                        .replace(/[^0-9]/g, "")
+                        .slice(0, 4);
+                    });
+                  }}
+                />
+                <SelectBox
+                  options={OPTIONS_M}
+                  onChange={(value) => {
+                    setUser((draft) => {
+                      draft.birthMonth = value;
+                    });
+                  }}
+                ></SelectBox>
+                <SelectBox
+                  options={OPTIONS_D}
+                  onChange={(value) => {
+                    setUser((draft) => {
+                      draft.birthDay = value;
+                    });
+                  }}
+                ></SelectBox>
               </div>
             </div>
 
@@ -211,9 +429,7 @@ export default function Start({ isShowProfile, setProfile }) {
           <footer className={startCss.footer}>
             <button
               className={startCss.btn}
-              onClick={() => {
-                setProfile();
-              }}
+              onClick={onSubmitClick}
             >
               시작하기
             </button>
