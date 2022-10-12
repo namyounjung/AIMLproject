@@ -13,7 +13,16 @@ import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
 import brandList from "../../detail/object.js";
+import data from './data.js';
+import moment from 'moment';
+import Weather from './weather.js';
+
+
 function Muji() {
+
+  const today = moment().format('YYYY-MM-DD');
+  let filterdate = data.filter(filterdate => filterdate.ds >= today);
+
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
@@ -58,41 +67,32 @@ function Muji() {
       <div className={brandsCss.saleTitle}>브랜드 세일 예보</div>
       <div className={brandsCss.saleWrapper}>
         <dl>
-          <dt>9월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
+          <dt>{filterdate[0].month}월 <br />{filterdate[0].week}번째 주</dt>
+          {/* <Day month={filterdate[0].month} week={filterdate[0].week} /> */}
+          <Weather percent={filterdate[0].percent} />
         </dl>
         <dl>
-          <dt>10월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
+          <dt>{filterdate[1].month}월 <br />{filterdate[1].week}번째 주</dt>
+          <Weather percent={filterdate[1].percent} />
         </dl>
         <dl>
-          <dt>11월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
+          <dt>{filterdate[2].month}월 <br />{filterdate[2].week}번째 주</dt>
+          <Weather percent={filterdate[3].percent} />
+          {/* <dd>
+          <Weather percent={filterdate[3].percent} />
+          </dd> */}
         </dl>
         <dl>
-          <dt>12월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
+          <dt>{filterdate[3].month}월 <br />{filterdate[3].week}번째 주</dt>
+          <Weather percent={filterdate[3].percent} />
         </dl>
         <dl>
-          <dt>1월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
+          <dt>{filterdate[4].month}월 <br />{filterdate[4].week}번째 주</dt>
+          <Weather percent={filterdate[4].percent} />
         </dl>
       </div>
+
+
     </div>
   );
 }
