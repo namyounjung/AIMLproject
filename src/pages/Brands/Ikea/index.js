@@ -8,8 +8,12 @@ import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
+import data from './data.js';
+import Saleweek from "../sale_weeks.js";
+
 
 export default function Ikea() {
+
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
@@ -51,43 +55,7 @@ export default function Ikea() {
         })}
       </div>
       <div className={brandsCss.saleTitle}>브랜드 세일 예보</div>
-      <div className={brandsCss.saleWrapper}>
-        <dl>
-          <dt>9월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
-        </dl>
-        <dl>
-          <dt>10월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
-        </dl>
-        <dl>
-          <dt>11월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
-        </dl>
-        <dl>
-          <dt>12월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
-        </dl>
-        <dl>
-          <dt>1월</dt>
-          <dd>
-            <img src={sun} />
-            50%
-          </dd>
-        </dl>
-      </div>
+      <Saleweek data={data} />
     </div>
   );
 }

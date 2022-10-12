@@ -4,11 +4,11 @@ import HomeIndex from "./pages/home";
 import SearchIndex from "./pages/Search";
 import MenuIndex from "./pages/Menu";
 import MypageIndex from "./pages/Mypage";
-import LoginIndex from "./pages/Mypage/login";
+import LoginIndex from "./pages/Mypage";
 import Cal from "./pages/Calendar";
+import FavIndex from "./pages/Mypage/favorite";
 import "./App.css";
 import BasicLayout from "./layouts/BasicLayout";
-import SignupIndex from "./pages/Mypage/Signup";
 import MujiIndex from "./pages/Brands/Muji";
 import EightIndex from "./pages/Brands/Eightsec";
 import KbpIndex from "./pages/Brands/kbp";
@@ -81,6 +81,14 @@ function App() {
           }
         />
         <Route
+          path="/mypage/favorite"
+          element={
+            <BasicLayout>
+              <FavIndex></FavIndex>
+            </BasicLayout>
+          }
+        />
+        <Route
           path="/login"
           element={
             <BasicLayout>
@@ -113,14 +121,6 @@ function App() {
           element={
             <BasicLayout>
               <Cal />
-            </BasicLayout>
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            <BasicLayout>
-              <SignupIndex />
             </BasicLayout>
           }
         />

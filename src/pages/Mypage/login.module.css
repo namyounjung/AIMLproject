@@ -1,102 +1,126 @@
-.container {
+.loginWrapper {
   width: 100%;
   height: 100%;
+  padding-bottom: 70px;
 }
 
-.container > .logo {
-  width: 100%;
-  padding-top: 80px;
-  padding-bottom: 38px;
+.header {
+  font-weight: 400;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 22px;
   text-align: center;
-}
-.container > .logo > img {
-  width: 100%;
-}
-
-.container .inputWrapper {
-  padding: 0 22px;
-  margin-bottom: 10px;
-}
-
-.container .inputWrapper .inputTitle {
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 19px;
-  color: #898989;
-  font-family: "sinbi";
-}
-
-.container .inputWrapper input {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-input.password {
-  font-family: "pass", "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-}
-
-.container .inputWrapper input:focus {
-  border: 1px solid #d8f747;
-  outline: none;
-}
-
-.container .inputWrapper .button {
-  width: 100%;
-  height: 40px;
-  margin-bottom: 10px;
-  align-items: center;
-  outline: 0;
-  border: 0;
-  background-color: #eeeeee;
-  border-radius: 10px;
-
-  margin: 20px 0 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 40px;
+  letter-spacing: -0.408px;
   color: #000000;
-  text-align: center;
+  text-align: left;
+  padding: 13px 0;
+  width: 100%;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
-.container .inputWrapper .button:active {
-  background-color: #d8f747;
-}
-
-.btext {
-  margin: 0 0 0 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 40px;
-  color: #000000;
-  text-align: center;
-}
-
-.container .joinWrapper {
-  padding: 10px 22px;
-  margin-bottom: 10px;
+.tagWrapper {
+  padding: 0 20px;
+  justify-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.joinWrapper .items {
-  padding: 0 17px;
-  font-size: smaller;
-  color: #727272;
+.tag {
+  background-color: #83af0050;
+  padding: 1px 22px;
+  margin: 0px 5px;
+  border-radius: 10px;
+  font-size: 4vw;
+}
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 18px;
 }
 
-.items:link {
-  text-decoration: none;
+.container {
+  padding: 0px 32px;
+  margin-bottom: 30px;
 }
-.joinWrapper .items:active {
+.container .profile {
+  display: flex;
+  place-items: center;
+  gap: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.favorite {
+  padding: 0px 0px 0px 32px;
+  margin-bottom: 18px;
+}
+
+.favorite .title {
+  margin-bottom: 0;
+}
+
+.favtitle {
+  display: flex;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.favorite .btnShowAll {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
   color: #000000;
-  font-weight: bolder;
 }
 
-a {
-  text-decoration: none;
+.calendar {
+  padding: 0px 32px;
+  margin-bottom: 18px;
+}
+.calendar .title {
+  margin-bottom: 0;
+}
+.calendar .mycalendar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1px;
+  color: #000000;
+}
+.caltitle {
+  display: flex;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.swiperTextTitle {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  color: #000000;
+}
+
+.logout {
+  padding-top: 30px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none !important;
+}
+
+.bar {
+  margin: 10px 60px 20px 60px;
+  border-top: 1px dashed #bbb;
+}
+
+.recommend {
+  padding: 0px 32px;
+  margin-bottom: 18px;
 }
