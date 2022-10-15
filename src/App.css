@@ -130,3 +130,6 @@ abbr[title] {
   background: #82af00;
   color: white;
 }
+.swiper-slide img {
+  width: 100%;
+}

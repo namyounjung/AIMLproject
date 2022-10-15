@@ -40,15 +40,14 @@ function App() {
   }, [pathname]);
 
   useEffect(() => {
-    console.log(localStorage.getItem("user"));
-    if (localStorage.getItem("user") === null)
+    if (!localStorage.getItem("user"))
       setTimeout(() => {
         setIsShowProfile(true);
         document.body.style.overflow = "hidden";
       }, 1000);
-  }, []);
+  }, [window.location.pathname]);
 
-  function setProfile() {
+  function setIsShowProfileFalse() {
     setIsShowProfile(false);
     document.body.style.overflow = "auto";
   }
@@ -279,7 +278,7 @@ function App() {
       </Routes>
       <Start
         isShowProfile={isShowProfile}
-        setIsShowProfile={setProfile}
+        setIsShowProfileFalse={setIsShowProfileFalse}
       />
     </>
   );

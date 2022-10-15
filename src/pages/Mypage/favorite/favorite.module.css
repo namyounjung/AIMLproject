@@ -9,12 +9,21 @@
   background: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-/* .title {
+.title {
   font-size: 20px;
   font-weight: bold;
   margin: 0;
   background-color: #eeeeee;
   padding: 8px 0 8px 36px;
-  box-shadow: 0 8px 32px 0 rgb(175 175 181 / 37%);
   border: 1px solid rgba(255, 255, 255, 0.18);
-} */
+}
+.brand {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  padding: 20px 0;
+}
+.TextTitle {
+  font-size: 20px;
+  font-weight: bold;
+}

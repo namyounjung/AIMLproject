@@ -20,8 +20,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import BrandList from "../detail/object.js";
 import { useImmer } from "use-immer";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginIndex() {
+  const navigate = useNavigate();
   const [isActive, setIsActive] = useState("");
   const [profile, setProfile] = useImmer({
     tag: [],
@@ -49,8 +51,8 @@ export default function LoginIndex() {
   }
 
   function ClickLogout() {
-    user = localStorage.removeItem("user");
-    window.history.push("/home");
+    localStorage.removeItem("user");
+    navigate("/home");
   }
 
   useEffect(() => {
@@ -171,16 +173,14 @@ export default function LoginIndex() {
               </SwiperSlide>
             );
           })}
-          <NavLink to={"/home"}>
-            <p
-              className={loginCss.logout}
-              onClick={ClickLogout}
-            >
-              로그아웃
-            </p>
-          </NavLink>
         </Swiper>
       </div>
+      <p
+        className={loginCss.logout}
+        onClick={ClickLogout}
+      >
+        로그아웃
+      </p>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import m_eight from "../../../assets/menuimage/mono/eight.png";
 import m_fila from "../../../assets/menuimage/mono/fila.png";
 import m_ikea from "../../../assets/menuimage/mono/ikea.png";
 import m_kbp from "../../../assets/menuimage/mono/kbp.png";
-import m_newbalance from "../../../assets/menuimage/mono/newbalance.png";
+import m_newbalance from "../../../assets/menuimage/mono/nb.png";
 import m_nike from "../../../assets/menuimage/mono/nike.png";
 import m_north from "../../../assets/menuimage/mono/north.png";
 import m_polo from "../../../assets/menuimage/mono/polo.png";
@@ -25,7 +25,7 @@ import eight from "../../../assets/menuimage/eight.png";
 import fila from "../../../assets/menuimage/fila.png";
 import ikea from "../../../assets/menuimage/ikea.png";
 import kbp from "../../../assets/menuimage/kbp.png";
-import newbalance from "../../../assets/menuimage/newbalance.png";
+import newbalance from "../../../assets/menuimage/nb.png";
 import nike from "../../../assets/menuimage/nike.png";
 import north from "../../../assets/menuimage/north.png";
 import polo from "../../../assets/menuimage/polo.png";
@@ -94,18 +94,19 @@ const OPTIONS_D = [
 ];
 
 const SelectBox = (props) => {
-  const handleChange = (e) => {
-    // event handler
-    props.onChange(e.target.value);
-  };
-
   return (
-    <select onChange={handleChange}>
+    <select
+      // value={props.value}
+      onChange={(e) => {
+        props.onChange(e.target.value);
+      }}
+    >
       {props.options.map((option) => (
         <option
           key={option.value}
           value={option.value}
-          defaultValue={props.defaultValue === option.value}
+          // defaultValue={props.defaultValue === option.value}
+          selected={props.value === option.value}
         >
           {option.name}
         </option>
@@ -114,9 +115,8 @@ const SelectBox = (props) => {
   );
 };
 
-export default function Start({ isShowProfile, setIsShowProfile }) {
-  const [step, setStep] = useState(1);
-  const [keyword, setKeyword] = useState([
+function getInitKeywordList() {
+  return [
     {
       id: "muji",
       name: "무인양품",
@@ -277,7 +277,21 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
       category: "etc",
       tag: ["Unique", "Sensitive", "Fabric"],
     },
-  ]);
+  ];
+}
+function getInitUser() {
+  return {
+    name: "",
+    birthYear: "",
+    birthMonth: "01",
+    birthDay: "01",
+    favoriteBrandList: [],
+  };
+}
+export default function Start({ isShowProfile, setIsShowProfileFalse }) {
+  const [step, setStep] = useState(1);
+  const [keyword, setKeyword] = useState(getInitKeywordList());
+  const [user, setUser] = useImmer(getInitUser());
 
   function onKeywordClick(index) {
     const newList = [...keyword];
@@ -285,18 +299,15 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
     setKeyword(newList);
   }
 
-  const [user, setUser] = useImmer({
-    name: "",
-    birthYear: "",
-    birthMonth: "01",
-    birthDay: "01",
-    favoriteBrandList: [],
-  });
-
   function onSubmitClick() {
     if (user.favoriteBrandList.length >= 3) {
       localStorage.setItem("user", JSON.stringify(user));
-      setIsShowProfile();
+      setIsShowProfileFalse();
+      setTimeout(() => {
+        setStep(1);
+        setKeyword(getInitKeywordList());
+        setUser(getInitUser());
+      }, [1000]);
     }
   }
 
@@ -310,6 +321,7 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
       setStep(2);
     }
   }
+
   useEffect(() => {
     setUser((draft) => {
       draft.favoriteBrandList = keyword
@@ -317,7 +329,6 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
         .map((item) => item.id);
     });
   }, [keyword]);
-
   return (
     <div
       className={startCss.main}
@@ -337,6 +348,7 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
             <div className={startCss.inputWrapper}>
               <p className={startCss.inputTitle}>이름</p>
               <input
+                value={user.name}
                 onChange={(e) => {
                   setUser((draft) => {
                     draft.name = e.target.value;
@@ -360,21 +372,23 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
                   }}
                 />
                 <SelectBox
+                  value={user.birthMonth}
                   options={OPTIONS_M}
                   onChange={(value) => {
                     setUser((draft) => {
                       draft.birthMonth = value;
                     });
                   }}
-                ></SelectBox>
+                />
                 <SelectBox
+                  value={user.birthDay}
                   options={OPTIONS_D}
                   onChange={(value) => {
                     setUser((draft) => {
                       draft.birthDay = value;
                     });
                   }}
-                ></SelectBox>
+                />
               </div>
             </div>
 
@@ -412,7 +426,7 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
                       onClick={() => onKeywordClick(i)}
                     >
                       <img src={item.image} />
-                      <p>{item.id}</p>
+                      <p>{item.name}</p>
                     </div>
                   );
                 } else {
@@ -428,7 +442,7 @@ export default function Start({ isShowProfile, setIsShowProfile }) {
                       onClick={() => onKeywordClick(i)}
                     >
                       <img src={item.m_image} />
-                      <p>{item.id}</p>
+                      <p>{item.name}</p>
                     </div>
                   );
                 }

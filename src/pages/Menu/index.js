@@ -3,7 +3,7 @@ import Footer from "../../components/footer";
 import MenuCss from "./menu.module.css";
 import adidasimg from "../../../src/assets/menuimage/adidas.png";
 import nikeimg from "../../../src/assets/menuimage/nike.png";
-import nbimg from "../../../src/assets/menuimage/newbalance.png";
+import nbimg from "../../../src/assets/menuimage/nb.png";
 import zaraimg from "../../../src/assets/menuimage/zara.png";
 import mujiimg from "../../../src/assets/menuimage/muji.png";
 import eightimg from "../../../src/assets/menuimage/eight.png";
