@@ -26,44 +26,52 @@ export default function SearchIndex() {
   const [search, setSearch] = useState("");
   const brandlist = [
     {
-      id: "Eightsec",
-      searchWord: ["에잇", "에잇세컨즈", "8", "eight seconds"],
-      imgName: eightimg,
+      id: "nike",
+      searchWord: ["nike", "나이키"],
+      imgName: nikeimg,
+      rank: 1,
     },
     {
       id: "adidas",
       searchWord: ["아디다스", "adidas"],
       imgName: adiimg,
+      rank: 2,
     },
     {
-      id: "Beanpole",
-      searchWord: ["빈폴", "beanpole"],
-      imgName: bpimg,
+      id: "ikea",
+      searchWord: ["ikea", "이케아"],
+      imgName: ikeaimg,
+      rank: 3,
     },
     {
-      id: "HnM",
-      searchWord: ["hnm", "hnm", "hm"],
-      imgName: hmimg,
+      id: "uniqlo",
+      searchWord: ["uniqlo", "유니클로"],
+      imgName: uniimg,
+      rank: 4,
     },
     {
-      id: "nike",
-      searchWord: ["nike", "나이키"],
-      imgName: nikeimg,
-    },
-    {
-      id: "Muji",
-      searchWord: ["Muji", "muji", "무인양품", "무지"],
-      imgName: mjimg,
-    },
-    {
-      id: "kbp",
-      searchWord: ["kbp", "키티버니포니", "kittybunnypony"],
-      imgName: kbpimg,
+      id: "zara",
+      searchWord: ["zara", "자라"],
+      imgName: zaimg,
+      rank: 5,
     },
     {
       id: "newbal",
       searchWord: ["newbalance", "뉴발란스", "nb"],
       imgName: nbimg,
+      rank: 6,
+    },
+    {
+      id: "topten",
+      searchWord: ["topten", "탑텐", "top10"],
+      imgName: ttimg,
+      rank: 7,
+    },
+    {
+      id: "polo",
+      searchWord: ["polo", "폴로", "폴로랄프로렌"],
+      imgName: poloimg,
+      rank: 8,
     },
     {
       id: "north",
@@ -75,58 +83,83 @@ export default function SearchIndex() {
         "노페",
       ],
       imgName: northimg,
+      rank: 9,
     },
     {
-      id: "polo",
-      searchWord: ["polo", "폴로", "폴로랄프로렌"],
-      imgName: poloimg,
+      id: "kbp",
+      searchWord: ["kbp", "키티버니포니", "kittybunnypony"],
+      imgName: kbpimg,
+      rank: 10,
     },
     {
-      id: "spao",
-      searchWord: ["spao", "스파오"],
-      imgName: spimg,
+      id: "Muji",
+      searchWord: ["Muji", "muji", "무인양품", "무지"],
+      imgName: mjimg,
+      rank: 11,
+    },
+    {
+      id: "HnM",
+      searchWord: ["hnm", "hnm", "hm"],
+      imgName: hmimg,
+      rank: 12,
     },
     {
       id: "tomboy",
       searchWord: ["tomboy", "톰보이"],
       imgName: tbimg,
+      rank: 13,
     },
     {
-      id: "topten",
-      searchWord: ["topten", "탑텐", "top10"],
-      imgName: ttimg,
-    },
-    {
-      id: "uniqlo",
-      searchWord: ["uniqlo", "유니클로"],
-      imgName: uniimg,
+      id: "spao",
+      searchWord: ["spao", "스파오"],
+      imgName: spimg,
+      rank: 14,
     },
     {
       id: "xexymix",
       searchWord: ["xexymix", "젝시믹스"],
       imgName: ximg,
+      rank: 15,
     },
     {
-      id: "zara",
-      searchWord: ["zara", "자라"],
-      imgName: zaimg,
+      id: "Beanpole",
+      searchWord: ["빈폴", "beanpole"],
+      imgName: bpimg,
+      rank: 16,
     },
     {
-      id: "ikea",
-      searchWord: ["ikea", "이케아"],
-      imgName: ikeaimg,
-    },
-    {
-      id: "yankee",
-      searchWord: ["yankee candle", "양키캔들", "yankee"],
-      imgName: ykimg,
+      id: "Eightsec",
+      searchWord: ["에잇", "에잇세컨즈", "8", "eight seconds"],
+      imgName: eightimg,
+      rank: 17,
     },
     {
       id: "fila",
       searchWord: ["fila", "휠라", "Fila"],
       imgName: filaimg,
+      rank: 18,
+    },
+    {
+      id: "yankee",
+      searchWord: ["yankeecandle", "양키캔들", "yankee"],
+      imgName: ykimg,
+      rank: 19,
     },
   ];
+
+  const filterTitle = brandlist.filter((p) => {
+    let tf = false;
+    for (let i of p.searchWord) {
+      if (i.includes(search) === true) {
+        tf = true;
+      }
+    }
+    return tf;
+  });
+
+  brandlist.sort(function (a, b) {
+    return a.rank - b.rank;
+  });
   return (
     <div className={SearchCss.margin}>
       <div className={SearchCss.header}>Brand Ranking</div>
@@ -138,22 +171,30 @@ export default function SearchIndex() {
             setSearch(e.target.value);
           }}
         />
-        <NavLink to={"/Search/searching"}>
-          <img
-            src={magnify}
-            className={SearchCss.searchInputIcon}
-          />
-        </NavLink>
       </div>
-      {/* {search === "" && <>검색어가 없습니다.</>} */}
       <div className={SearchCss.container}>
-        {brandlist.slice(9).map((brand, i) => {
+        {filterTitle.map((brandlist, rank) => {
+          return (
+            <div className={SearchCss.rankimgWrapper}>
+              <span className={SearchCss.ranktext}>{rank + 1}.</span>
+              <NavLink to={`/Brands/${brandlist.id}`}>
+                <img
+                  src={brandlist.imgName}
+                  className={SearchCss.rankimg}
+                />
+              </NavLink>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* {search === "" && <>검색어가 없습니다.</>} */}
+      {/* <div className={SearchCss.container}>
+        {brandlist.map((brand, rank) => {
           return (
             <>
               <div className={SearchCss.rankimgWrapper}>
-                <span className={SearchCss.ranktext}>
-                  {i + 1}.{/* 검색 순위를 넣고파 */}
-                </span>
+                <span className={SearchCss.ranktext}>{rank + 1}.</span>
                 <NavLink to={`/Brands/${brand.id}`}>
                   <img
                     src={brand.imgName}
@@ -164,7 +205,7 @@ export default function SearchIndex() {
             </>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

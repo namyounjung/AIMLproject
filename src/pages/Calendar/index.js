@@ -36,7 +36,7 @@ function Cal() {
               let y = moment(i, "yyyy-mm-dd").format("yyyy");
               let m = moment(i, "yyyy-mm-dd").format("mm");
               let d = i.slice(-2);
-              console.log(y, m, d);
+              // console.log(y, m, d);
               if (
                 y == date.getFullYear() &&
                 m == date.getMonth() + 1 &&
@@ -58,7 +58,6 @@ function Cal() {
           }}
         />
       </div>
-      <div>유니클로</div>
     </div>
   );
 }
