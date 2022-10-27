@@ -15,9 +15,11 @@ function Cal() {
   const [saleList, setSaleList] = useState([]);
 
   useEffect(() => {
-    setSaleList([10, 11, 12]);
+    setSaleList(["2022-10-28", "2022-10-29", "2022-09-26"]);
   }, []);
 
+  const today = new Date();
+  let filterdate = saleList.filter((filterdate) => filterdate >= today);
   return (
     <div>
       <div className={calendarCss.header}>Calendar</div>
@@ -29,21 +31,34 @@ function Cal() {
           navigationLabel={null}
           showNeighboringMonth={false}
           tileContent={({ activeStartDate, date, view }) => {
-            if (saleList.find((x) => x === date.getDate())) {
-              return (
-                <>
-                  <div className="flex justify-center items-center absoluteDiv">
-                    {/* <div className="dot">check</div> */}
-                    <img src={d1} />
-                    <img src={d2} />
-                    <img src={d3} />
-                  </div>
-                </>
-              );
+            // console.log(date.getMonth() + 1);
+            for (let i of saleList) {
+              let y = moment(i, "yyyy-mm-dd").format("yyyy");
+              let m = moment(i, "yyyy-mm-dd").format("mm");
+              let d = i.slice(-2);
+              console.log(y, m, d);
+              if (
+                y == date.getFullYear() &&
+                m == date.getMonth() + 1 &&
+                d == date.getDate()
+              ) {
+                return (
+                  <>
+                    <div className="flex justify-center items-center absoluteDiv">
+                      {/* <div className="dot">check</div> */}
+                      <img src={d1} />
+
+                      {/* <img src={d2} />
+                    <img src={d3} /> */}
+                    </div>
+                  </>
+                );
+              }
             }
           }}
         />
       </div>
+      <div>유니클로</div>
     </div>
   );
 }
