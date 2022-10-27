@@ -1,0 +1,26 @@
+.searchInputWrapper {
+  width: 100%;
+  padding: 16px 20px;
+  position: relative;
+}
+.back {
+  padding: 20px 0 10px 20px;
+}
+
+.searchInputWrapper > input {
+  width: 100%;
+  background-color: rgba(196, 196, 196, 0.5);
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+}
+
+.searchInputIcon {
+  position: absolute;
+  right: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.brand {
+}

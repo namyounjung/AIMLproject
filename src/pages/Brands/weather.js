@@ -12,7 +12,7 @@ function Weather({percent}) {
         return <dd><img src={rain} />{percent}%</dd> ;
     } else if (percent < 20){
         return <dd><img src={cloud} />{percent}%</dd>;
-    } else if (percent > 20) {
+    } else if (percent >= 20) {
       return <dd><img src={sun} />{percent}%</dd>;
     }
   }

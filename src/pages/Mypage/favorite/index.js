@@ -47,45 +47,49 @@ export default function FavIndex() {
   return (
     <div>
       <div className={favCss.header}>Favorite Brands</div>
-      <p className={favCss.title}>즐겨찾기 목록</p>
-
-      {isEdit === true ? (
-        <p
-          className={favCss.edit}
-          onClick={onCompleteClick}
-        >
-          완료
-        </p>
-      ) : (
-        <p
-          className={favCss.edit}
-          onClick={() => setIsEdit(true)}
-        >
-          편집
-        </p>
-      )}
-      {profile.favorite.map((item, i) => {
-        return (
-          <div
-            className={favCss.brand}
-            key={i}
+      <div className={favCss.subject}>
+        <p className={favCss.title}>즐겨찾기 목록</p>
+        {isEdit === true ? (
+          <p
+            className={favCss.edit}
+            onClick={onCompleteClick}
           >
-            <img
-              src={require(`../../../assets/menuimage/${item}.png`)}
-              alt=""
-            />
-            <p className={favCss.TextTitle}>{item}</p>
-            {isEdit === true ? (
+            완료
+          </p>
+        ) : (
+          <p
+            className={favCss.edit}
+            onClick={() => setIsEdit(true)}
+          >
+            편집
+          </p>
+        )}
+      </div>
+      <div className={favCss.wholeBrand}>
+        {profile.favorite.map((item, i) => {
+          return (
+            <div
+              className={favCss.brand}
+              key={i}
+            >
               <img
-                src={minus1}
-                onClick={() => onDeleteClick(item)}
+                src={require(`../../../assets/menuimage/${item}.png`)}
+                alt=""
+                className={favCss.brandimg}
               />
-            ) : (
-              <></>
-            )}
-          </div>
-        );
-      })}
+              <p className={favCss.TextTitle}>{item}</p>
+              {isEdit === true ? (
+                <img
+                  src={minus1}
+                  onClick={() => onDeleteClick(item)}
+                />
+              ) : (
+                <></>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
-import data from './data.js';
+import data from './kbp_data.js';
 import Saleweek from "../sale_weeks.js";
 
 export default function KBP() {

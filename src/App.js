@@ -28,6 +28,7 @@ import IkeaIndex from "./pages/Brands/Ikea";
 import YKIndex from "./pages/Brands/Yankee";
 import FilaIndex from "./pages/Brands/Fila";
 import NikeIndex from "./pages/Brands/nike";
+import SearchingIndex from "./pages/Search/searching";
 import { useState, useEffect } from "react";
 import Start from "./pages/home/components/start";
 
@@ -272,6 +273,14 @@ function App() {
           element={
             <BasicLayout>
               <NikeIndex />
+            </BasicLayout>
+          }
+        />
+        <Route
+          path="/Search/searching"
+          element={
+            <BasicLayout>
+              <SearchingIndex />
             </BasicLayout>
           }
         />

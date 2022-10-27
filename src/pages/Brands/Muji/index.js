@@ -13,7 +13,7 @@ import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
 import brandList from "../../detail/object.js";
-import data from "./data.js";
+import data from "./muji_data.js";
 import Saleweek from "../sale_weeks.js";
 
 function Muji() {

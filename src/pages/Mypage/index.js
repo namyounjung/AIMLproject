@@ -159,18 +159,20 @@ export default function LoginIndex() {
         >
           {profile.recommend.map((item, i) => {
             return (
-              <SwiperSlide
-                key={i}
-                className={loginCss.swiperSlide}
-              >
-                <img
-                  src={require(`../../assets/rec_logo/${item}.png`)}
-                  alt=""
-                />
-                <div className={loginCss.swiperTextWrapper}>
-                  <p className={loginCss.swiperTextTitle}>{item}</p>
-                </div>
-              </SwiperSlide>
+              <>
+                <SwiperSlide
+                  key={i}
+                  className={loginCss.swiperSlide}
+                >
+                  <img
+                    src={require(`../../assets/rec_logo/${item}.png`)}
+                    alt=""
+                  />
+                  <div className={loginCss.swiperTextWrapper}>
+                    <p className={loginCss.swiperTextTitle}>{item}</p>
+                  </div>
+                </SwiperSlide>
+              </>
             );
           })}
         </Swiper>

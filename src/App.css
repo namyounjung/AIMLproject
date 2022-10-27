@@ -75,8 +75,13 @@ abbr[title] {
   text-decoration: none;
 }
 
-.react-calendar__tile {
+.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__month-view__days__day--weekend {
   height: calc((100vw - 24px) / 7);
+}
+.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__year-view__months__month,
+.react-calendar__tile react-calendar__year-view__months__month,
+.react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__decade-view__years__year {
+  height: calc((100vw - 24px) / 5);
 }
 
 .react-calendar__tile:enabled:hover,

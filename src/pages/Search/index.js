@@ -138,13 +138,14 @@ export default function SearchIndex() {
             setSearch(e.target.value);
           }}
         />
-
-        <img
-          src={magnify}
-          className={SearchCss.searchInputIcon}
-        />
+        <NavLink to={"/Search/searching"}>
+          <img
+            src={magnify}
+            className={SearchCss.searchInputIcon}
+          />
+        </NavLink>
       </div>
-      {search === "" && <>검색어가 없습니다.</>}
+      {/* {search === "" && <>검색어가 없습니다.</>} */}
       <div className={SearchCss.container}>
         {brandlist.slice(9).map((brand, i) => {
           return (
