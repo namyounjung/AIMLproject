@@ -20,3 +20,13 @@
 .calendarWrapper {
   margin: 0 12px;
 }
+
+.nowActiveDate {
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  left: 0;
+}
