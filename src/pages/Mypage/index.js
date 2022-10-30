@@ -30,6 +30,13 @@ export default function LoginIndex() {
     favorite: [],
     recommend: [],
   });
+  const result = profile.recommend.filter((Item) => {
+    let flag = true;
+    profile.favorite.forEach((favItem) => {
+      if (favItem === Item) flag = false;
+    });
+    return flag;
+  });
 
   const user = localStorage.getItem("user");
   const parsedUser = JSON.parse(user);
@@ -54,7 +61,6 @@ export default function LoginIndex() {
     localStorage.removeItem("user");
     navigate("/home");
   }
-
   useEffect(() => {
     let favoriteList = [];
     let tagList = [];
@@ -93,6 +99,7 @@ export default function LoginIndex() {
           <img src={userimg} />
           <p className={loginCss.user}>{parsedUser.name}</p>
         </div>
+
         <div className={loginCss.tagWrapper}>
           {profile.tag.map((tag, i) => {
             return (
