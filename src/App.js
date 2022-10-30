@@ -55,24 +55,6 @@ function App() {
     document.body.style.overflow = "auto";
   }
 
-  const [favorite, setFavorite] = useState([]);
-
-  useEffect(() => {
-    let favoriteList = [];
-    const user = localStorage.getItem("user");
-    const parsedUser = JSON.parse(user);
-
-    parsedUser.favoriteBrandList.forEach((item) => {
-      for (const obj of BrandList) {
-        if (item === obj.brandname) {
-          // favoriteList
-          favoriteList.push(obj.brandname);
-        }
-      }
-    });
-    setFavorite(favoriteList);
-  }, []);
-
   return (
     // <DetailIndex />
     <>
