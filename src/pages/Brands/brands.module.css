@@ -20,7 +20,6 @@
 
   display: flex;
   place-items: center;
-  /* text-align: center; */
 }
 
 .logo {
@@ -39,6 +38,15 @@
   left: 50%;
   top: 30%;
   display: flex;
+}
+
+.favorite {
+  width: 25px;
+  height: 25px;
+}
+
+.favorite img {
+  width: 100%;
 }
 
 .imageWrapper {

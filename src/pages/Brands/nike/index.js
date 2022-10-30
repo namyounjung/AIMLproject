@@ -8,7 +8,7 @@ import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
-import data from './nike_data.js';
+import data from "./nike_data.js";
 import Saleweek from "../sale_weeks.js";
 
 export default function Adidas() {
@@ -16,25 +16,17 @@ export default function Adidas() {
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
         <NavLink to={-1}>
-          <img
-            src={back}
-            alt=" "
-          />
+          <img src={back} alt=" " />
         </NavLink>
         <div className={brandsCss.logo}>
           <img src={logoimg} />
         </div>
+        {/* <input className={brandsCss.favorite} type="checkbox" checked={}/> */}
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <a
-          href="www.adidas.co.kr"
-          target="_blank"
-        >
-          <img
-            src={main}
-            alt=" "
-          />
+        <a href="www.adidas.co.kr" target="_blank">
+          <img src={main} alt=" " />
         </a>
         <div className={brandsCss.imgTextTop}>
           나이키 브랜드 페이지 <br />

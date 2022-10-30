@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useImmer } from "use-immer";
 import DetailIndex from "./pages/detail";
 import HomeIndex from "./pages/home";
 import SearchIndex from "./pages/Search";
@@ -31,6 +32,7 @@ import NikeIndex from "./pages/Brands/nike";
 import SearchingIndex from "./pages/Search/searching";
 import { useState, useEffect } from "react";
 import Start from "./pages/home/components/start";
+import BrandList from "./pages/detail/object.js";
 
 function App() {
   const [isShowProfile, setIsShowProfile] = useState(false);
@@ -52,6 +54,25 @@ function App() {
     setIsShowProfile(false);
     document.body.style.overflow = "auto";
   }
+
+  const [favorite, setFavorite] = useState([]);
+
+  useEffect(() => {
+    let favoriteList = [];
+    const user = localStorage.getItem("user");
+    const parsedUser = JSON.parse(user);
+
+    parsedUser.favoriteBrandList.forEach((item) => {
+      for (const obj of BrandList) {
+        if (item === obj.brandname) {
+          // favoriteList
+          favoriteList.push(obj.brandname);
+        }
+      }
+    });
+    setFavorite(favoriteList);
+  }, []);
+
   return (
     // <DetailIndex />
     <>
@@ -112,10 +133,7 @@ function App() {
             </BasicLayout>
           }
         />
-        <Route
-          path="/detail"
-          element={<DetailIndex />}
-        />
+        <Route path="/detail" element={<DetailIndex />} />
         <Route
           path="/calendar"
           element={
