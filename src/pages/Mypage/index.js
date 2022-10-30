@@ -30,6 +30,7 @@ export default function LoginIndex() {
     favorite: [],
     recommend: [],
   });
+  console.log(profile);
   const result = profile.recommend.filter((Item) => {
     let flag = true;
     profile.favorite.forEach((favItem) => {
@@ -75,13 +76,14 @@ export default function LoginIndex() {
           tagList = tagList.concat(obj.tag);
 
           // recommnedList
-          const mergedRecommnedList = recommnedList.concat(obj.relatedBrands);
-          recommnedList = mergedRecommnedList.filter(
-            (item, pos) => mergedRecommnedList.indexOf(item) === pos
-          );
+          recommnedList = [...recommnedList, ...obj.relatedBrands];
         }
       }
     });
+    recommnedList = recommnedList
+      .filter((item, pos) => recommnedList.indexOf(item) === pos) // recommnedList 내부 중복 제거
+      .filter((item) => !favoriteList.includes(item)); // favoriteList와 중복 제거
+
     setProfile((draft) => {
       draft.favorite = favoriteList;
       draft.tag = getTopThreeTag(tagList);
@@ -103,10 +105,7 @@ export default function LoginIndex() {
         <div className={loginCss.tagWrapper}>
           {profile.tag.map((tag, i) => {
             return (
-              <b
-                key={i}
-                className={loginCss.tag}
-              >
+              <b key={i} className={loginCss.tag}>
                 #{tag}
               </b>
             );
@@ -128,10 +127,7 @@ export default function LoginIndex() {
         >
           {profile.favorite.map((item, i) => {
             return (
-              <SwiperSlide
-                key={i}
-                className={loginCss.swiperSlide}
-              >
+              <SwiperSlide key={i} className={loginCss.swiperSlide}>
                 <img
                   src={require(`../../assets/rec_logo/${item}.png`)}
                   alt=""
@@ -167,10 +163,7 @@ export default function LoginIndex() {
           {profile.recommend.map((item, i) => {
             return (
               <>
-                <SwiperSlide
-                  key={i}
-                  className={loginCss.swiperSlide}
-                >
+                <SwiperSlide key={i} className={loginCss.swiperSlide}>
                   <img
                     src={require(`../../assets/rec_logo/${item}.png`)}
                     alt=""
@@ -184,10 +177,7 @@ export default function LoginIndex() {
           })}
         </Swiper>
       </div>
-      <p
-        className={loginCss.logout}
-        onClick={ClickLogout}
-      >
+      <p className={loginCss.logout} onClick={ClickLogout}>
         로그아웃
       </p>
     </div>
