@@ -14,6 +14,42 @@ import fav_g from "../../../assets/icon/fav_green.svg";
 import fav_w from "../../../assets/icon/fav_white.svg";
 
 export default function Zara() {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  function handleToggleFavoriteItem() {
+    const user = localStorage.getItem("user");
+    const parsedUser = JSON.parse(user);
+    if (isFavorite === true) {
+      parsedUser.favoriteBrandList = parsedUser.favoriteBrandList.filter(
+        (value) => value !== "zara"
+      );
+      setIsFavorite(false);
+    } else {
+      parsedUser.favoriteBrandList.push("zara");
+      setIsFavorite(true);
+    }
+    localStorage.setItem("user", JSON.stringify(parsedUser));
+  }
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    const parsedUser = JSON.parse(user);
+    let favoriteList = [];
+    parsedUser.favoriteBrandList.forEach((item) => {
+      for (const obj of brandList) {
+        if (item === obj.brandname) {
+          // favoriteList
+          favoriteList.push(obj.brandname);
+        }
+      }
+    });
+    favoriteList.length > 0 &&
+    favoriteList.find((item) => {
+      return item === "zara";
+    })
+      ? setIsFavorite(true)
+      : setIsFavorite(false);
+  }, []);
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
@@ -26,6 +62,21 @@ export default function Zara() {
         <div className={brandsCss.logo}>
           <img src={logoimg} />
         </div>
+        {isFavorite ? (
+          <img
+            src={fav_g}
+            className={brandsCss.favorite}
+            onClick={handleToggleFavoriteItem}
+            alt=""
+          />
+        ) : (
+          <img
+            src={fav_w}
+            className={brandsCss.favorite}
+            onClick={handleToggleFavoriteItem}
+            alt=""
+          />
+        )}
       </div>
 
       <div className={brandsCss.imageWrapper}>
