@@ -61,10 +61,16 @@ function Muji() {
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
         <NavLink to={-1}>
-          <img src={back} alt=" " />
+          <img
+            src={back}
+            alt=" "
+          />
         </NavLink>
         <div className={brandsCss.logo}>
-          <img src={logoimg} alt="" />
+          <img
+            src={logoimg}
+            alt=""
+          />
         </div>
         {isFavorite ? (
           <img
@@ -84,8 +90,14 @@ function Muji() {
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <a href="http://www.mujikorea.net/" target="_blank">
-          <img src={main} alt=" " />
+        <a
+          href="http://www.mujikorea.net/"
+          target="_blank"
+        >
+          <img
+            src={main}
+            alt=" "
+          />
         </a>
         <div className={brandsCss.imgTextTop}>
           지구에게도 사람에게도 좋은 <br />
