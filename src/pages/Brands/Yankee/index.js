@@ -7,9 +7,11 @@ import brandList from "../../detail/object.js";
 import sun from "../../../assets/weather/sun.svg";
 import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
-import data from './data.js';
+import data from "./data.js";
 import Saleweek from "../sale_weeks.js";
-
+import { useEffect, useState } from "react";
+import fav_g from "../../../assets/icon/fav_green.svg";
+import fav_w from "../../../assets/icon/fav_white.svg";
 
 export default function Yankee() {
   return (

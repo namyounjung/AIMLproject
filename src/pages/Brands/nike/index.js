@@ -10,13 +10,19 @@ import rain from "../../../assets/weather/rain.svg";
 import cloud from "../../../assets/weather/cloud.svg";
 import data from "./nike_data.js";
 import Saleweek from "../sale_weeks.js";
+import { useEffect, useState } from "react";
+import fav_g from "../../../assets/icon/fav_green.svg";
+import fav_w from "../../../assets/icon/fav_white.svg";
 
 export default function Adidas() {
   return (
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
         <NavLink to={-1}>
-          <img src={back} alt=" " />
+          <img
+            src={back}
+            alt=" "
+          />
         </NavLink>
         <div className={brandsCss.logo}>
           <img src={logoimg} />
@@ -25,8 +31,14 @@ export default function Adidas() {
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <a href="www.adidas.co.kr" target="_blank">
-          <img src={main} alt=" " />
+        <a
+          href="www.adidas.co.kr"
+          target="_blank"
+        >
+          <img
+            src={main}
+            alt=" "
+          />
         </a>
         <div className={brandsCss.imgTextTop}>
           나이키 브랜드 페이지 <br />
