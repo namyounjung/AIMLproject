@@ -30,7 +30,7 @@ export default function LoginIndex() {
     favorite: [],
     recommend: [],
   });
-  console.log(profile);
+  // console.log(profile);
   const result = profile.recommend.filter((Item) => {
     let flag = true;
     profile.favorite.forEach((favItem) => {
@@ -105,7 +105,10 @@ export default function LoginIndex() {
         <div className={loginCss.tagWrapper}>
           {profile.tag.map((tag, i) => {
             return (
-              <b key={i} className={loginCss.tag}>
+              <b
+                key={i}
+                className={loginCss.tag}
+              >
                 #{tag}
               </b>
             );
@@ -127,7 +130,10 @@ export default function LoginIndex() {
         >
           {profile.favorite.map((item, i) => {
             return (
-              <SwiperSlide key={i} className={loginCss.swiperSlide}>
+              <SwiperSlide
+                key={i}
+                className={loginCss.swiperSlide}
+              >
                 <img
                   src={require(`../../assets/rec_logo/${item}.png`)}
                   alt=""
@@ -148,8 +154,8 @@ export default function LoginIndex() {
             <p className={loginCss.mycalendar}>내 캘린더</p>
           </NavLink>
         </div>
-        <p>10월 셋째주 유니클로 세일(예상)</p>
-        <p>10월 넷째주 톰보이 세일(예상)</p>
+        <p>10월 셋째주 유니클로 세일</p>
+        <p>10월 넷째주 톰보이 세일</p>
         <p>12월 첫째주 키티버니포니 세일</p>
       </div>
       <hr className={loginCss.bar} />
@@ -163,7 +169,10 @@ export default function LoginIndex() {
           {profile.recommend.map((item, i) => {
             return (
               <>
-                <SwiperSlide key={i} className={loginCss.swiperSlide}>
+                <SwiperSlide
+                  key={i}
+                  className={loginCss.swiperSlide}
+                >
                   <img
                     src={require(`../../assets/rec_logo/${item}.png`)}
                     alt=""
@@ -177,7 +186,10 @@ export default function LoginIndex() {
           })}
         </Swiper>
       </div>
-      <p className={loginCss.logout} onClick={ClickLogout}>
+      <p
+        className={loginCss.logout}
+        onClick={ClickLogout}
+      >
         로그아웃
       </p>
     </div>

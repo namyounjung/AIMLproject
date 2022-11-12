@@ -76,7 +76,7 @@ function Cal() {
           }}
         />
         {activeBrand.isActive && (
-          <h1>{activeBrand.brand}가 세일중이ㄹ옵시다</h1>
+          <h3>{activeBrand.brand} 세일 확률이 20% 이상입니다.</h3>
         )}
       </div>
     </div>
