@@ -56,10 +56,7 @@ export default function BeanPole() {
     <div className={brandsCss.brandsWrapper}>
       <div className={brandsCss.header}>
         <NavLink to={-1}>
-          <img
-            src={back}
-            alt=" "
-          />
+          <img src={back} alt=" " />
         </NavLink>
         <div className={brandsCss.logo}>
           <img src={logoimg} />
@@ -82,14 +79,8 @@ export default function BeanPole() {
       </div>
 
       <div className={brandsCss.imageWrapper}>
-        <a
-          href="https://www.ssfshop.com/Beanpole"
-          target="_blank"
-        >
-          <img
-            src={main}
-            alt=" "
-          />
+        <a href="https://www.ssfshop.com/Beanpole" target="_blank" alt="">
+          <img src={main} alt=" " />
         </a>
         <div className={brandsCss.imgTextTop}>
           빈폴페이지 <br />
