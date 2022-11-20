@@ -60,7 +60,6 @@ function Cal() {
                     }}
                     key={index}
                     onBlur={() => {
-                      console.log("onblur");
                       setActiveBrand((draft) => {
                         draft.isActive = false;
                       });
@@ -104,7 +103,16 @@ function Cal() {
           >
             <strong>{activeBrand.brand}</strong>의 세일 확률은
             <br />
-            <strong>{activeBrand.percent}%</strong> 입니다! 🤑
+            {activeBrand.percent >= 30 ? (
+              <>
+                <strong style={{ color: "red" }}>{activeBrand.percent}%</strong>
+                &nbsp;입니다! 🥳
+              </>
+            ) : (
+              <>
+                <strong>{activeBrand.percent}%</strong>&nbsp;입니다! 🤑
+              </>
+            )}
           </h3>
         )}
       </div>
