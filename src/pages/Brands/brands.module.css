@@ -95,7 +95,7 @@
 }
 
 .imgTextBottom .imgTextBsmall {
-  font-family: "AppleSDGothicNeoM00";
+  font-family: "pretendard";
 
   font-size: 4.5vw;
 }
@@ -111,7 +111,7 @@
 }
 
 .tag {
-  font-family: "AppleSDGothicNeoM00";
+  font-family: "pretendard";
   background-color: #d8f747;
   padding: 1px 22px;
   margin: 0px 5px;
@@ -278,7 +278,7 @@ dd {
 
 .bottomWrapper {
   margin-top: 20px;
-  font-family: "AppleSDGothicNeoM00";
+  font-family: "pretendard";
   font-size: 3.2vw;
   text-align: center;
   /* font-size-adjust: auto; */
