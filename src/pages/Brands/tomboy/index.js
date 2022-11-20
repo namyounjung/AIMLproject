@@ -91,13 +91,13 @@ export default function Tomboy() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          톰보이 페이지 <br />
-          「기분 좋은 생활」의 실현
+          STUDIO TOMBOY <br />
+          ATELIER F/W 2022
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>은은하지만 존재감있는</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> MUJI passport 회원 한정
+            겨울 보온 아이템 <br />
           </div>
         </div>
       </div>

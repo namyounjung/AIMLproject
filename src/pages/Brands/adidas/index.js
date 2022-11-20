@@ -102,13 +102,14 @@ export default function Adidas() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          아디다스 브랜드 페이지 <br />
-          「기분 좋은 생활」의 실현
+          Impossible is nothing.
+          <br />
+          ADIDAS
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>출구가 전부일 때,</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> MUJI passport 회원 한정
+            불가능 그것은 아무것도 아니다
           </div>
         </div>
       </div>

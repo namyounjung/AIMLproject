@@ -81,7 +81,7 @@ export default function Zara() {
 
       <div className={brandsCss.imageWrapper}>
         <a
-          href="https://www.zara.com/"
+          href="https://www.zara.com/kr/"
           target="_blank"
         >
           <img
@@ -90,13 +90,15 @@ export default function Zara() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          자라 페이지 <br />
-          「기분 좋은 생활」의 실현
+          ZARA
+          <br />
+          Winter SALE
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>ZARA와 함께하는</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 자라 앱 회원 한정
+            Happy Christmas
+            <br />
           </div>
         </div>
       </div>

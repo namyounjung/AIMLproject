@@ -92,13 +92,14 @@ export default function Ikea() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          이케아 브랜드 페이지 <br />
-          「기분 좋은 생활」의 실현
+          IKEA <br />
+          'GREEN FRIDAY'
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>11/16 ~ 11/26</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 이케아 회원 한정
+            중고가구로 지구를 더 아낄 수 있는 기회 <br /> IKEA와 함께 그린
+            프라이데이를!
           </div>
         </div>
       </div>

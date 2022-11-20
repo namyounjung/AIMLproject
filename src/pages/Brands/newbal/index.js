@@ -82,7 +82,7 @@ export default function Newbalance() {
 
       <div className={brandsCss.imageWrapper}>
         <a
-          href="www.nbkorea.com"
+          href="https://www.nbkorea.com/"
           target="_blank"
         >
           <img
@@ -91,13 +91,13 @@ export default function Newbalance() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          뉴발란스 페이지 <br />
-          「기분 좋은 생활」의 실현
+          Nblack Friday <br />
+          Last Chance
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
-          <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 뉴발란스 회원 한정
+          <div className={brandsCss.imgTextBsmall}>2022 Nblack Friday</div>
+          <div className={brandsCss.imgTextBBig}>
+            품절임박 상품을 만나보세요 <br />
           </div>
         </div>
       </div>

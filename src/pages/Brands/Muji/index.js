@@ -1,7 +1,7 @@
 import brandsCss from "../brands.module.css";
 import back from "../../../assets/icon/back.svg";
 import { NavLink } from "react-router-dom";
-import main from "../../../assets/image/muji2.svg";
+import main from "../../../assets/image/muji.svg";
 import logoimg from "../../../assets/logo2/muji.svg";
 import fav_g from "../../../assets/icon/fav_green.svg";
 import fav_w from "../../../assets/icon/fav_white.svg";
@@ -100,13 +100,13 @@ function Muji() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          지구에게도 사람에게도 좋은 <br />
-          「기분 좋은 생활」의 실현
+          편안한 숙면 <br />
+          나에게 맞는 침구 고르기
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
-          <div className={brandsCss.imgTextBsmall}>
-            10/30(금) - 11/10(화) <br /> MUJI passport 회원 한정
+          <div className={brandsCss.imgTextBsmall}>편안한 휴식을 위한</div>
+          <div className={brandsCss.imgTextBBig}>
+            나만의 홈웨어&파자마 <br />
           </div>
         </div>
       </div>

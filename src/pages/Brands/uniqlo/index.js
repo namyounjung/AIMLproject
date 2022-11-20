@@ -91,13 +91,13 @@ export default function Uniqlo() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          유니클로 페이지 <br />
-          「기분 좋은 생활」의 실현
+          UNIQLO <br />
+          겨울 감사제
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>11.18 ▶ 11.21(4일간)</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 유니클로 앱 회원 한정
+            감사한 마음으로 준비한 특별한 혜택
           </div>
         </div>
       </div>

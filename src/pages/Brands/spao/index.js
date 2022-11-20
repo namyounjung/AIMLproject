@@ -91,13 +91,13 @@ export default function SPAO() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          스파오 페이지 <br />
-          「기분 좋은 생활」의 실현
+          SPAO <br />
+          13th Anniversary
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>PAJAMAS COLLECTIONS</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 스파오 회원 한정
+            스파오와 함께하는 <br /> 파자마 컬렉션
           </div>
         </div>
       </div>

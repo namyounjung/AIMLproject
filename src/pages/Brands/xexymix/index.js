@@ -89,14 +89,11 @@ export default function Xexymix() {
             alt=" "
           />
         </a>
-        <div className={brandsCss.imgTextTop}>
-          젝시믹스 페이지 <br />
-          「기분 좋은 생활」의 실현
-        </div>
+        <div className={brandsCss.imgTextTop}>XEXYMIX BLACK FRIDAY</div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>11.11 - 11.25</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 젝시믹스 회원 한정
+            창사 이래 최대 할인 쇼! <br /> 누구나 VVIP!
           </div>
         </div>
       </div>

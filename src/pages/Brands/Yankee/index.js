@@ -90,13 +90,12 @@ export default function Yankee() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          양키캔들 브랜드 페이지 <br />
-          「기분 좋은 생활」의 실현
+          Merry Christmas <br /> with Yankee Candle
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>향긋한 크리스마스</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> Yankee Candle 회원 한정
+            50년 이상의 역사를 자랑하는 <br /> 프리미엄 브랜드 Yankee Candle
           </div>
         </div>
       </div>

@@ -82,7 +82,7 @@ export default function NorthFace() {
 
       <div className={brandsCss.imageWrapper}>
         <a
-          href="http://www.thenorthfacekorea.co.kr"
+          href="https://www.thenorthfacekorea.co.kr"
           target="_blank"
         >
           <img
@@ -91,13 +91,13 @@ export default function NorthFace() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          노스페이스 페이지 <br />
-          「기분 좋은 생활」의 실현
+          THENORTHFACE <br />
+          HEAT한 다운의 시작
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>ECO HEAT DOWN</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> MUJI passport 회원 한정
+            높은 보온성을 자랑하는 <br /> 차별화된 퍼포먼스 제품
           </div>
         </div>
       </div>

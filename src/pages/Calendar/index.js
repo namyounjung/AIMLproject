@@ -80,7 +80,10 @@ function Cal() {
                         right: "13px",
                       }}
                     >
-                      <img src={d1} alt="" />
+                      <img
+                        src={d1}
+                        alt=""
+                      />
                     </div>
                   </button>
                 );
@@ -101,7 +104,7 @@ function Cal() {
           >
             <strong>{activeBrand.brand}</strong>의 세일 확률은
             <br />
-            <strong>{activeBrand.percent}%</strong> 이상 입니다! 🤑
+            <strong>{activeBrand.percent}%</strong> 입니다! 🤑
           </h3>
         )}
       </div>

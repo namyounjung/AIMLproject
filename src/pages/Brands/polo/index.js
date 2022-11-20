@@ -91,13 +91,14 @@ export default function POLO() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          POLO 페이지 <br />
-          「기분 좋은 생활」의 실현
+          POLO RALPH LAUREN <br />
+          함께하는 즐거움
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>Holiday Dressing</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 폴로 랄프로렌 회원 한정
+            엄선된 타임리스 기프트를 <br />
+            랄프로렌의 세계에서 만나보세요.
           </div>
         </div>
       </div>

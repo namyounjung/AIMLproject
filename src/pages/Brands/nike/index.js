@@ -1,7 +1,7 @@
 import brandsCss from "../brands.module.css";
 import back from "../../../assets/icon/back.svg";
 import { NavLink } from "react-router-dom";
-import main from "../../../assets/image/nike2.svg";
+import main from "../../../assets/image/nike.svg";
 import logoimg from "../../../assets/logo2/nike.svg";
 // import url from 'http://www.mujikorea.net/';
 import brandList from "../../detail/object.js";
@@ -82,7 +82,7 @@ export default function Adidas() {
 
       <div className={brandsCss.imageWrapper}>
         <a
-          href="www.adidas.co.kr"
+          href="https://www.nike.com/"
           target="_blank"
         >
           <img
@@ -91,13 +91,14 @@ export default function Adidas() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          나이키 브랜드 페이지 <br />
-          Just Do it!
+          2022 BLACK Friday
+          <br />
+          SAVE UP TO 60%
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
-          <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 나이키 멤버십 한정
+          <div className={brandsCss.imgTextBsmall}>Shop Now, Relax later</div>
+          <div className={brandsCss.imgTextBBig}>
+            NIKE GO LEGGINGS <br />
           </div>
         </div>
       </div>

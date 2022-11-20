@@ -1,5 +1,21 @@
 const totalBrandSaleData = [
   {
+    ds: "2022-11-16",
+    month: 11,
+    week: 3,
+    percent: 100,
+    brand: "ikea",
+  },
+  {
+    ds: "2022-11-26",
+    month: 11,
+    week: 4,
+    percent: 100,
+    brand: "ikea",
+  },
+  { ds: "2022-11-21", month: 11, week: 3, percent: 100, brand: "nike" },
+  { ds: "2022-11-26", month: 11, week: 4, percent: 100, brand: "nike" },
+  {
     ds: "2021-09-12",
     month: 9,
     week: 2.0,

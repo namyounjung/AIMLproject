@@ -92,13 +92,13 @@ export default function FILA() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          FILA 브랜드 페이지 <br />
-          「기분 좋은 생활」의 실현
+          FILA with Hailey Bieber <br />
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>ONLINE EXCLUSIVE</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> FILA 멤버 한정
+            DOWN COLLECTION
+            <br /> 22F/W
           </div>
         </div>
       </div>

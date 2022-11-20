@@ -90,13 +90,13 @@ export default function Topten() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          탑텐 페이지 <br />
-          「기분 좋은 생활」의 실현
+          TOPTEN <br />
+          LAST BIG SALE
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
+          <div className={brandsCss.imgTextBBig}>BLACK FRIDAY</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> MUJI passport 회원 한정
+            11/17(목)-11/21(월) <br /> 겨울 인기 아이템 특별 가격!
           </div>
         </div>
       </div>

@@ -92,14 +92,13 @@ export default function Eight() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          에잇세컨즈 페이지 <br />
-          「기분 좋은 생활」의 실현
+          Adorable Memory
+          <br />
+          8Seconds
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 10% 할인</div>
-          <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> SSFSHOP 회원 한정
-          </div>
+          <div className={brandsCss.imgTextBBig}>아늑한 공간, 포근한 옷 </div>
+          <div className={brandsCss.imgTextBsmall}>SSFSHOP 회원 한정</div>
         </div>
       </div>
       <div className={brandsCss.tagWrapper}>

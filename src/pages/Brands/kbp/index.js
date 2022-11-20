@@ -91,13 +91,13 @@ export default function KBP() {
           />
         </a>
         <div className={brandsCss.imgTextTop}>
-          키티버니포니페이지 <br />
-          안녕하세요
+          kittybunnypony <br />
+          Life In Patterns
         </div>
         <div className={brandsCss.imgTextBottom}>
-          <div className={brandsCss.imgTextBBig}>전품목 최대 50% 할인</div>
+          <div className={brandsCss.imgTextBBig}>Merry Christmas with KBP</div>
           <div className={brandsCss.imgTextBsmall}>
-            10/30(금)-11/10(화) <br /> 3만원 이상 구매시 무료배송
+            키티버니포니와 함께하는 15번째 크리스마스
           </div>
         </div>
       </div>
