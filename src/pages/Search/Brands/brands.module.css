@@ -12,7 +12,7 @@
   padding: 20px;
   width: 100%;
   background-color: #ffffff;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
 
   position: fixed;
   top: 0;
@@ -68,7 +68,7 @@
   color: #ffffff;
   left: 5%;
   top: 5%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   font-style: normal;
   font-weight: 400;
   font-size: 6vw;
@@ -83,7 +83,7 @@
   /* -0.5px 0 #000000; */
   right: 3%;
   bottom: 5%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   font-style: normal;
   font-weight: 400;
   letter-spacing: -0.408px;
@@ -169,7 +169,7 @@ dd {
 /* } */
 
 .saleTitle {
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   font-size: 6vw;
   color: #000000;
   font-weight: 500;
@@ -202,7 +202,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   left: 2%;
@@ -213,7 +213,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   left: 19%;
@@ -224,7 +224,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   left: 36%;
@@ -235,7 +235,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   right: 36%;
@@ -246,7 +246,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   right: 19%;
@@ -257,7 +257,7 @@ dd {
   font-size: 4.5vw;
   justify-content: space-between;
   width: 12%;
-  font-family: "AppleSDGothicNeoB00";
+  font-family: "pretendard";
   position: absolute;
   top: 7%;
   right: 3%;
