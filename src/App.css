@@ -80,6 +80,7 @@ abbr[title] {
 }
 .react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__year-view__months__month,
 .react-calendar__tile react-calendar__year-view__months__month,
+.react-calendar__tile react-calendar__month-view__days__day,
 .react-calendar__tile.react-calendar__tile--now.react-calendar__tile--hasActive.react-calendar__decade-view__years__year {
   height: calc((100vw - 24px) / 5);
 }

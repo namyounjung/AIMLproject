@@ -9,7 +9,8 @@ import d1 from "../../assets/calendar/1.png";
 import d2 from "../../assets/calendar/2.png";
 import d3 from "../../assets/calendar/3.png";
 import brandList from "../detail/object.js";
-import totalBrandSaleData from "./data";
+import totalBrandSaleData from "./calendar_data_20.js";
+import user from "../../utils/globalThis";
 
 function Cal() {
   const [value, onChange] = useState(new Date());
@@ -22,6 +23,16 @@ function Cal() {
   // let filterdate = totalBrandSaleData.ds.filter(
   //   (filterdate) => filterdate >= today
   // );
+
+  function aaa(item) {
+    // favoriteList 안에 item이 있는지 이쓰면 trure 없으면 false
+    const favoriteList = user.getUser().favoriteBrandList;
+    const one = favoriteList.find((value) => {
+      console.log(value);
+      return null;
+    });
+    return true;
+  }
 
   return (
     <div>
@@ -49,11 +60,9 @@ function Cal() {
               if (
                 y == date.getFullYear() &&
                 m == date.getMonth() + 1 &&
-                d == date.getDate()
+                d == date.getDate() &&
+                aaa(item) === true
               ) {
-                setActiveBrand((draft) => {
-                  draft.brand = item.brand;
-                });
                 return (
                   <div key={index}>
                     <div className="flex justify-center items-center absoluteDiv">
@@ -64,6 +73,7 @@ function Cal() {
                         onClick={(e) => {
                           e.stopPropagation();
                           setActiveBrand((draft) => {
+                            draft.brand = item.brand;
                             draft.isActive = true;
                           });
                         }}
@@ -75,7 +85,7 @@ function Cal() {
             }
           }}
         />
-        {activeBrand.isActive && (
+        {activeBrand.isActive === true && (
           <h3>{activeBrand.brand} 세일 확률이 20% 이상입니다.</h3>
         )}
       </div>
